@@ -12,11 +12,29 @@ const concat = (a, b) => a.concat(b);
 
 const unique = (a, b) => (a.includes(b) ? a : a.concat(b));
 
-const extractClasses = ss =>
-  ss.stylesheet.rules
-    .filter(x => x.type == "rule") // TODO: Handle nested rules
-    .map(x => x.selectors) // Get selectors-arrays
-    .reduce(concat, []) // Concat selectors-arrays into single array
+const getSelectors = node => getSelectorsHelper([], node);
+
+const getSelectorsHelper = (acc, node) => {
+  switch (node.type) {
+    case "stylesheet":
+      return node.stylesheet.rules.reduce(getSelectorsHelper, acc);
+    // Has rules
+    case "document":
+    case "supports":
+    case "media":
+    case "host":
+      return node.rules.reduce(getSelectorsHelper, acc);
+    // Has selectors
+    case "rule":
+    case "page":
+      return acc.concat(node.selectors);
+    default:
+      return acc;
+  }
+};
+
+const extractClasses = selectors =>
+  selectors
     .join(" ") // Join selectors into single string
     .match(/\.[a-zA-Z0-9\-]+/g) // Match class selectors
     .reduce(unique, []) // Remove duplicates
@@ -78,6 +96,7 @@ fetch(CDNJS_API_URL)
   .then(fetch)
   .then(res => res.text())
   .then(css.parse)
+  .then(getSelectors)
   .then(extractClasses)
   .then(createElmModule)
   .then(elmModule => fs.writeFileSync("src/Bulma/Classes.elm", elmModule));

@@ -9,20 +9,25 @@ module Bulma.Helpers exposing (classList)
 
 -}
 
+import Html
+import Html.Attributes
 
-{-| Takes a list of classes and combines them into a single String.
-It's literally just `String.join " "`. If you need to conditionally
-add classes, use [`Html.Attributes.classList`](http://package.elm-lang.org/packages/elm-lang/html/2.0.0/Html-Attributes#classList)
+
+{-| Takes a list of classes returns an appropriate `Html.Attribute`
+If you need to conditionally add classes, use [`Html.Attributes.classList`](http://package.elm-lang.org/packages/elm-lang/html/2.0.0/Html-Attributes#classList)
 instead.
 
-    classList
-        [ "some-class"
-        , Bulma.button
-        , Bulma.isSecondary
-        , "some-other-class-for-some-reason"
-        ] == "some-class button is-primary some-other-class-for-some-reason"
+    Html.button
+        [ classList
+            [ "some-class"
+            , Bulma.button
+            , Bulma.isSecondary
+            , "some-other-class-for-some-reason"
+            ]
+        ]
+        []
 
 -}
-classList : List String -> String
+classList : List String -> Html.Attribute msg
 classList =
-    String.join " "
+    Html.Attributes.class << String.join " "

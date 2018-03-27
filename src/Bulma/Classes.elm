@@ -1,3 +1,4 @@
+
 module Bulma.Classes
     exposing
         ( block
@@ -36,9 +37,24 @@ module Bulma.Classes
         , fileLabel
         , fileName
         , footer
+        , hasAddons
+        , hasAddonsCentered
+        , hasAddonsFullwidth
+        , hasAddonsRight
+        , hasArrowSeparator
+        , hasBulletSeparator
+        , hasDotSeparator
         , hasDropdown
+        , hasFixedSize
+        , hasIcon
+        , hasIconRight
+        , hasIconsLeft
+        , hasIconsRight
+        , hasName
         , hasNavbarFixedBottom
         , hasNavbarFixedTop
+        , hasShadow
+        , hasSucceedsSeparator
         , hasTextBlack
         , hasTextBlackBis
         , hasTextBlackTer
@@ -78,39 +94,117 @@ module Bulma.Classes
         , icon
         , image
         , input
+        , is0
+        , is1
+        , is10
+        , is11
+        , is12
+        , is128x128
+        , is16by9
+        , is16x16
+        , is1by1
+        , is2
+        , is24x24
+        , is2by1
+        , is3
+        , is32x32
+        , is3by2
+        , is4
+        , is48x48
+        , is4by3
+        , is5
+        , is6
+        , is64x64
+        , is7
+        , is8
+        , is9
+        , is96x96
         , isActive
+        , isAncestor
         , isBlack
         , isBlock
+        , isBold
+        , isBordered
+        , isBoxed
         , isCapitalized
         , isCenter
         , isCentered
+        , isChild
         , isClearfix
         , isClipped
         , isCurrent
         , isDanger
         , isDark
+        , isDelete
+        , isDisabled
+        , isEmpty
         , isExpanded
+        , isFixedBottom
+        , isFixedTop
         , isFlex
         , isFlexible
         , isFocused
+        , isFourFifths
+        , isFull
+        , isFullheight
+        , isFullwidth
+        , isGapless
+        , isGrouped
+        , isGroupedCentered
+        , isGroupedMultiline
+        , isGroupedRight
+        , isHalf
+        , isHalfheight
         , isHidden
+        , isHoverable
         , isHovered
         , isInfo
         , isInline
         , isInlineBlock
         , isInlineFlex
+        , isInverted
         , isInvisible
         , isItalic
         , isLarge
         , isLeft
         , isLight
         , isLink
+        , isLoading
         , isLowercase
         , isMarginless
         , isMedium
+        , isMobile
+        , isMultiline
+        , isMultiple
         , isNarrow
+        , isOffset1
+        , isOffset10
+        , isOffset11
+        , isOffset12
+        , isOffset2
+        , isOffset3
+        , isOffset4
+        , isOffset5
+        , isOffset6
+        , isOffset7
+        , isOffset8
+        , isOffset9
+        , isOffsetFourFifths
+        , isOffsetHalf
+        , isOffsetOneFifth
+        , isOffsetOneQuarter
+        , isOffsetOneThird
+        , isOffsetThreeFifths
+        , isOffsetThreeQuarters
+        , isOffsetTwoFifths
+        , isOffsetTwoThirds
+        , isOneFifth
+        , isOneQuarter
+        , isOneThird
+        , isOutlined
         , isOverlay
         , isPaddingless
+        , isParent
         , isPrimary
         , isPulledLeft
         , isPulledRight
@@ -127,11 +221,26 @@ module Bulma.Classes
         , isSize6
         , isSize7
         , isSmall
+        , isSpaced
+        , isSquare
+        , isStatic
+        , isStriped
         , isSuccess
         , isTab
+        , isText
+        , isThreeFifths
+        , isThreeQuarters
+        , isToggle
+        , isToggleRounded
         , isTransparent
+        , isTwoFifths
+        , isTwoThirds
         , isUnselectable
+        , isUp
         , isUppercase
+        , isVariable
+        , isVcentered
+        , isVertical
         , isWarning
         , isWhite
         , isWrapped
@@ -255,9 +364,24 @@ Example usage:
 @docs fileLabel
 @docs fileName
 @docs footer
+@docs hasAddons
+@docs hasAddonsCentered
+@docs hasAddonsFullwidth
+@docs hasAddonsRight
+@docs hasArrowSeparator
+@docs hasBulletSeparator
+@docs hasDotSeparator
 @docs hasDropdown
+@docs hasFixedSize
+@docs hasIcon
+@docs hasIconRight
+@docs hasIconsLeft
+@docs hasIconsRight
+@docs hasName
 @docs hasNavbarFixedBottom
 @docs hasNavbarFixedTop
+@docs hasShadow
+@docs hasSucceedsSeparator
 @docs hasTextBlack
 @docs hasTextBlackBis
 @docs hasTextBlackTer
@@ -297,39 +421,117 @@ Example usage:
 @docs icon
 @docs image
 @docs input
+@docs is0
+@docs is1
+@docs is10
+@docs is11
+@docs is12
+@docs is128x128
+@docs is16by9
+@docs is16x16
+@docs is1by1
+@docs is2
+@docs is24x24
+@docs is2by1
+@docs is3
+@docs is32x32
+@docs is3by2
+@docs is4
+@docs is48x48
+@docs is4by3
+@docs is5
+@docs is6
+@docs is64x64
+@docs is7
+@docs is8
+@docs is9
+@docs is96x96
 @docs isActive
+@docs isAncestor
 @docs isBlack
 @docs isBlock
+@docs isBold
+@docs isBordered
+@docs isBoxed
 @docs isCapitalized
 @docs isCenter
 @docs isCentered
+@docs isChild
 @docs isClearfix
 @docs isClipped
 @docs isCurrent
 @docs isDanger
 @docs isDark
+@docs isDelete
+@docs isDisabled
+@docs isEmpty
 @docs isExpanded
+@docs isFixedBottom
+@docs isFixedTop
 @docs isFlex
 @docs isFlexible
 @docs isFocused
+@docs isFourFifths
+@docs isFull
+@docs isFullheight
+@docs isFullwidth
+@docs isGapless
+@docs isGrouped
+@docs isGroupedCentered
+@docs isGroupedMultiline
+@docs isGroupedRight
+@docs isHalf
+@docs isHalfheight
 @docs isHidden
+@docs isHoverable
 @docs isHovered
 @docs isInfo
 @docs isInline
 @docs isInlineBlock
 @docs isInlineFlex
+@docs isInverted
 @docs isInvisible
 @docs isItalic
 @docs isLarge
 @docs isLeft
 @docs isLight
 @docs isLink
+@docs isLoading
 @docs isLowercase
 @docs isMarginless
 @docs isMedium
+@docs isMobile
+@docs isMultiline
+@docs isMultiple
 @docs isNarrow
+@docs isOffset1
+@docs isOffset10
+@docs isOffset11
+@docs isOffset12
+@docs isOffset2
+@docs isOffset3
+@docs isOffset4
+@docs isOffset5
+@docs isOffset6
+@docs isOffset7
+@docs isOffset8
+@docs isOffset9
+@docs isOffsetFourFifths
+@docs isOffsetHalf
+@docs isOffsetOneFifth
+@docs isOffsetOneQuarter
+@docs isOffsetOneThird
+@docs isOffsetThreeFifths
+@docs isOffsetThreeQuarters
+@docs isOffsetTwoFifths
+@docs isOffsetTwoThirds
+@docs isOneFifth
+@docs isOneQuarter
+@docs isOneThird
+@docs isOutlined
 @docs isOverlay
 @docs isPaddingless
+@docs isParent
 @docs isPrimary
 @docs isPulledLeft
 @docs isPulledRight
@@ -346,11 +548,26 @@ Example usage:
 @docs isSize6
 @docs isSize7
 @docs isSmall
+@docs isSpaced
+@docs isSquare
+@docs isStatic
+@docs isStriped
 @docs isSuccess
 @docs isTab
+@docs isText
+@docs isThreeFifths
+@docs isThreeQuarters
+@docs isToggle
+@docs isToggleRounded
 @docs isTransparent
+@docs isTwoFifths
+@docs isTwoThirds
 @docs isUnselectable
+@docs isUp
 @docs isUppercase
+@docs isVariable
+@docs isVcentered
+@docs isVertical
 @docs isWarning
 @docs isWhite
 @docs isWrapped
@@ -419,1372 +636,2128 @@ Example usage:
 -}
 
 
-{-| `Bulma.block == "block"`
+{-| `block == "block"`
 -}
 block : String
 block =
     "block"
 
 
-{-| `Bulma.box == "box"`
+{-| `box == "box"`
 -}
 box : String
 box =
     "box"
 
 
-{-| `Bulma.breadcrumb == "breadcrumb"`
+{-| `breadcrumb == "breadcrumb"`
 -}
 breadcrumb : String
 breadcrumb =
     "breadcrumb"
 
 
-{-| `Bulma.button == "button"`
+{-| `button == "button"`
 -}
 button : String
 button =
     "button"
 
 
-{-| `Bulma.buttons == "buttons"`
+{-| `buttons == "buttons"`
 -}
 buttons : String
 buttons =
     "buttons"
 
 
-{-| `Bulma.card == "card"`
+{-| `card == "card"`
 -}
 card : String
 card =
     "card"
 
 
-{-| `Bulma.cardContent == "card-content"`
+{-| `cardContent == "card-content"`
 -}
 cardContent : String
 cardContent =
     "card-content"
 
 
-{-| `Bulma.cardFooter == "card-footer"`
+{-| `cardFooter == "card-footer"`
 -}
 cardFooter : String
 cardFooter =
     "card-footer"
 
 
-{-| `Bulma.cardFooterItem == "card-footer-item"`
+{-| `cardFooterItem == "card-footer-item"`
 -}
 cardFooterItem : String
 cardFooterItem =
     "card-footer-item"
 
 
-{-| `Bulma.cardHeader == "card-header"`
+{-| `cardHeader == "card-header"`
 -}
 cardHeader : String
 cardHeader =
     "card-header"
 
 
-{-| `Bulma.cardHeaderIcon == "card-header-icon"`
+{-| `cardHeaderIcon == "card-header-icon"`
 -}
 cardHeaderIcon : String
 cardHeaderIcon =
     "card-header-icon"
 
 
-{-| `Bulma.cardHeaderTitle == "card-header-title"`
+{-| `cardHeaderTitle == "card-header-title"`
 -}
 cardHeaderTitle : String
 cardHeaderTitle =
     "card-header-title"
 
 
-{-| `Bulma.cardImage == "card-image"`
+{-| `cardImage == "card-image"`
 -}
 cardImage : String
 cardImage =
     "card-image"
 
 
-{-| `Bulma.checkbox == "checkbox"`
+{-| `checkbox == "checkbox"`
 -}
 checkbox : String
 checkbox =
     "checkbox"
 
 
-{-| `Bulma.column == "column"`
+{-| `column == "column"`
 -}
 column : String
 column =
     "column"
 
 
-{-| `Bulma.columns == "columns"`
+{-| `columns == "columns"`
 -}
 columns : String
 columns =
     "columns"
 
 
-{-| `Bulma.container == "container"`
+{-| `container == "container"`
 -}
 container : String
 container =
     "container"
 
 
-{-| `Bulma.content == "content"`
+{-| `content == "content"`
 -}
 content : String
 content =
     "content"
 
 
-{-| `Bulma.control == "control"`
+{-| `control == "control"`
 -}
 control : String
 control =
     "control"
 
 
-{-| `Bulma.delete == "delete"`
+{-| `delete == "delete"`
 -}
 delete : String
 delete =
     "delete"
 
 
-{-| `Bulma.dropdown == "dropdown"`
+{-| `dropdown == "dropdown"`
 -}
 dropdown : String
 dropdown =
     "dropdown"
 
 
-{-| `Bulma.dropdownContent == "dropdown-content"`
+{-| `dropdownContent == "dropdown-content"`
 -}
 dropdownContent : String
 dropdownContent =
     "dropdown-content"
 
 
-{-| `Bulma.dropdownDivider == "dropdown-divider"`
+{-| `dropdownDivider == "dropdown-divider"`
 -}
 dropdownDivider : String
 dropdownDivider =
     "dropdown-divider"
 
 
-{-| `Bulma.dropdownItem == "dropdown-item"`
+{-| `dropdownItem == "dropdown-item"`
 -}
 dropdownItem : String
 dropdownItem =
     "dropdown-item"
 
 
-{-| `Bulma.dropdownMenu == "dropdown-menu"`
+{-| `dropdownMenu == "dropdown-menu"`
 -}
 dropdownMenu : String
 dropdownMenu =
     "dropdown-menu"
 
 
-{-| `Bulma.fa == "fa"`
+{-| `fa == "fa"`
 -}
 fa : String
 fa =
     "fa"
 
 
-{-| `Bulma.field == "field"`
+{-| `field == "field"`
 -}
 field : String
 field =
     "field"
 
 
-{-| `Bulma.fieldBody == "field-body"`
+{-| `fieldBody == "field-body"`
 -}
 fieldBody : String
 fieldBody =
     "field-body"
 
 
-{-| `Bulma.fieldLabel == "field-label"`
+{-| `fieldLabel == "field-label"`
 -}
 fieldLabel : String
 fieldLabel =
     "field-label"
 
 
-{-| `Bulma.file == "file"`
+{-| `file == "file"`
 -}
 file : String
 file =
     "file"
 
 
-{-| `Bulma.fileCta == "file-cta"`
+{-| `fileCta == "file-cta"`
 -}
 fileCta : String
 fileCta =
     "file-cta"
 
 
-{-| `Bulma.fileIcon == "file-icon"`
+{-| `fileIcon == "file-icon"`
 -}
 fileIcon : String
 fileIcon =
     "file-icon"
 
 
-{-| `Bulma.fileInput == "file-input"`
+{-| `fileInput == "file-input"`
 -}
 fileInput : String
 fileInput =
     "file-input"
 
 
-{-| `Bulma.fileLabel == "file-label"`
+{-| `fileLabel == "file-label"`
 -}
 fileLabel : String
 fileLabel =
     "file-label"
 
 
-{-| `Bulma.fileName == "file-name"`
+{-| `fileName == "file-name"`
 -}
 fileName : String
 fileName =
     "file-name"
 
 
-{-| `Bulma.footer == "footer"`
+{-| `footer == "footer"`
 -}
 footer : String
 footer =
     "footer"
 
 
-{-| `Bulma.hasDropdown == "has-dropdown"`
+{-| `hasAddons == "has-addons"`
+-}
+hasAddons : String
+hasAddons =
+    "has-addons"
+
+
+{-| `hasAddonsCentered == "has-addons-centered"`
+-}
+hasAddonsCentered : String
+hasAddonsCentered =
+    "has-addons-centered"
+
+
+{-| `hasAddonsFullwidth == "has-addons-fullwidth"`
+-}
+hasAddonsFullwidth : String
+hasAddonsFullwidth =
+    "has-addons-fullwidth"
+
+
+{-| `hasAddonsRight == "has-addons-right"`
+-}
+hasAddonsRight : String
+hasAddonsRight =
+    "has-addons-right"
+
+
+{-| `hasArrowSeparator == "has-arrow-separator"`
+-}
+hasArrowSeparator : String
+hasArrowSeparator =
+    "has-arrow-separator"
+
+
+{-| `hasBulletSeparator == "has-bullet-separator"`
+-}
+hasBulletSeparator : String
+hasBulletSeparator =
+    "has-bullet-separator"
+
+
+{-| `hasDotSeparator == "has-dot-separator"`
+-}
+hasDotSeparator : String
+hasDotSeparator =
+    "has-dot-separator"
+
+
+{-| `hasDropdown == "has-dropdown"`
 -}
 hasDropdown : String
 hasDropdown =
     "has-dropdown"
 
 
-{-| `Bulma.hasNavbarFixedBottom == "has-navbar-fixed-bottom"`
+{-| `hasFixedSize == "has-fixed-size"`
+-}
+hasFixedSize : String
+hasFixedSize =
+    "has-fixed-size"
+
+
+{-| `hasIcon == "has-icon"`
+-}
+hasIcon : String
+hasIcon =
+    "has-icon"
+
+
+{-| `hasIconRight == "has-icon-right"`
+-}
+hasIconRight : String
+hasIconRight =
+    "has-icon-right"
+
+
+{-| `hasIconsLeft == "has-icons-left"`
+-}
+hasIconsLeft : String
+hasIconsLeft =
+    "has-icons-left"
+
+
+{-| `hasIconsRight == "has-icons-right"`
+-}
+hasIconsRight : String
+hasIconsRight =
+    "has-icons-right"
+
+
+{-| `hasName == "has-name"`
+-}
+hasName : String
+hasName =
+    "has-name"
+
+
+{-| `hasNavbarFixedBottom == "has-navbar-fixed-bottom"`
 -}
 hasNavbarFixedBottom : String
 hasNavbarFixedBottom =
     "has-navbar-fixed-bottom"
 
 
-{-| `Bulma.hasNavbarFixedTop == "has-navbar-fixed-top"`
+{-| `hasNavbarFixedTop == "has-navbar-fixed-top"`
 -}
 hasNavbarFixedTop : String
 hasNavbarFixedTop =
     "has-navbar-fixed-top"
 
 
-{-| `Bulma.hasTextBlack == "has-text-black"`
+{-| `hasShadow == "has-shadow"`
+-}
+hasShadow : String
+hasShadow =
+    "has-shadow"
+
+
+{-| `hasSucceedsSeparator == "has-succeeds-separator"`
+-}
+hasSucceedsSeparator : String
+hasSucceedsSeparator =
+    "has-succeeds-separator"
+
+
+{-| `hasTextBlack == "has-text-black"`
 -}
 hasTextBlack : String
 hasTextBlack =
     "has-text-black"
 
 
-{-| `Bulma.hasTextBlackBis == "has-text-black-bis"`
+{-| `hasTextBlackBis == "has-text-black-bis"`
 -}
 hasTextBlackBis : String
 hasTextBlackBis =
     "has-text-black-bis"
 
 
-{-| `Bulma.hasTextBlackTer == "has-text-black-ter"`
+{-| `hasTextBlackTer == "has-text-black-ter"`
 -}
 hasTextBlackTer : String
 hasTextBlackTer =
     "has-text-black-ter"
 
 
-{-| `Bulma.hasTextCentered == "has-text-centered"`
+{-| `hasTextCentered == "has-text-centered"`
 -}
 hasTextCentered : String
 hasTextCentered =
     "has-text-centered"
 
 
-{-| `Bulma.hasTextDanger == "has-text-danger"`
+{-| `hasTextDanger == "has-text-danger"`
 -}
 hasTextDanger : String
 hasTextDanger =
     "has-text-danger"
 
 
-{-| `Bulma.hasTextDark == "has-text-dark"`
+{-| `hasTextDark == "has-text-dark"`
 -}
 hasTextDark : String
 hasTextDark =
     "has-text-dark"
 
 
-{-| `Bulma.hasTextGrey == "has-text-grey"`
+{-| `hasTextGrey == "has-text-grey"`
 -}
 hasTextGrey : String
 hasTextGrey =
     "has-text-grey"
 
 
-{-| `Bulma.hasTextGreyDark == "has-text-grey-dark"`
+{-| `hasTextGreyDark == "has-text-grey-dark"`
 -}
 hasTextGreyDark : String
 hasTextGreyDark =
     "has-text-grey-dark"
 
 
-{-| `Bulma.hasTextGreyDarker == "has-text-grey-darker"`
+{-| `hasTextGreyDarker == "has-text-grey-darker"`
 -}
 hasTextGreyDarker : String
 hasTextGreyDarker =
     "has-text-grey-darker"
 
 
-{-| `Bulma.hasTextGreyLight == "has-text-grey-light"`
+{-| `hasTextGreyLight == "has-text-grey-light"`
 -}
 hasTextGreyLight : String
 hasTextGreyLight =
     "has-text-grey-light"
 
 
-{-| `Bulma.hasTextGreyLighter == "has-text-grey-lighter"`
+{-| `hasTextGreyLighter == "has-text-grey-lighter"`
 -}
 hasTextGreyLighter : String
 hasTextGreyLighter =
     "has-text-grey-lighter"
 
 
-{-| `Bulma.hasTextInfo == "has-text-info"`
+{-| `hasTextInfo == "has-text-info"`
 -}
 hasTextInfo : String
 hasTextInfo =
     "has-text-info"
 
 
-{-| `Bulma.hasTextJustified == "has-text-justified"`
+{-| `hasTextJustified == "has-text-justified"`
 -}
 hasTextJustified : String
 hasTextJustified =
     "has-text-justified"
 
 
-{-| `Bulma.hasTextLeft == "has-text-left"`
+{-| `hasTextLeft == "has-text-left"`
 -}
 hasTextLeft : String
 hasTextLeft =
     "has-text-left"
 
 
-{-| `Bulma.hasTextLight == "has-text-light"`
+{-| `hasTextLight == "has-text-light"`
 -}
 hasTextLight : String
 hasTextLight =
     "has-text-light"
 
 
-{-| `Bulma.hasTextLink == "has-text-link"`
+{-| `hasTextLink == "has-text-link"`
 -}
 hasTextLink : String
 hasTextLink =
     "has-text-link"
 
 
-{-| `Bulma.hasTextPrimary == "has-text-primary"`
+{-| `hasTextPrimary == "has-text-primary"`
 -}
 hasTextPrimary : String
 hasTextPrimary =
     "has-text-primary"
 
 
-{-| `Bulma.hasTextRight == "has-text-right"`
+{-| `hasTextRight == "has-text-right"`
 -}
 hasTextRight : String
 hasTextRight =
     "has-text-right"
 
 
-{-| `Bulma.hasTextSuccess == "has-text-success"`
+{-| `hasTextSuccess == "has-text-success"`
 -}
 hasTextSuccess : String
 hasTextSuccess =
     "has-text-success"
 
 
-{-| `Bulma.hasTextWarning == "has-text-warning"`
+{-| `hasTextWarning == "has-text-warning"`
 -}
 hasTextWarning : String
 hasTextWarning =
     "has-text-warning"
 
 
-{-| `Bulma.hasTextWeightBold == "has-text-weight-bold"`
+{-| `hasTextWeightBold == "has-text-weight-bold"`
 -}
 hasTextWeightBold : String
 hasTextWeightBold =
     "has-text-weight-bold"
 
 
-{-| `Bulma.hasTextWeightLight == "has-text-weight-light"`
+{-| `hasTextWeightLight == "has-text-weight-light"`
 -}
 hasTextWeightLight : String
 hasTextWeightLight =
     "has-text-weight-light"
 
 
-{-| `Bulma.hasTextWeightNormal == "has-text-weight-normal"`
+{-| `hasTextWeightNormal == "has-text-weight-normal"`
 -}
 hasTextWeightNormal : String
 hasTextWeightNormal =
     "has-text-weight-normal"
 
 
-{-| `Bulma.hasTextWeightSemibold == "has-text-weight-semibold"`
+{-| `hasTextWeightSemibold == "has-text-weight-semibold"`
 -}
 hasTextWeightSemibold : String
 hasTextWeightSemibold =
     "has-text-weight-semibold"
 
 
-{-| `Bulma.hasTextWhite == "has-text-white"`
+{-| `hasTextWhite == "has-text-white"`
 -}
 hasTextWhite : String
 hasTextWhite =
     "has-text-white"
 
 
-{-| `Bulma.hasTextWhiteBis == "has-text-white-bis"`
+{-| `hasTextWhiteBis == "has-text-white-bis"`
 -}
 hasTextWhiteBis : String
 hasTextWhiteBis =
     "has-text-white-bis"
 
 
-{-| `Bulma.hasTextWhiteTer == "has-text-white-ter"`
+{-| `hasTextWhiteTer == "has-text-white-ter"`
 -}
 hasTextWhiteTer : String
 hasTextWhiteTer =
     "has-text-white-ter"
 
 
-{-| `Bulma.heading == "heading"`
+{-| `heading == "heading"`
 -}
 heading : String
 heading =
     "heading"
 
 
-{-| `Bulma.help == "help"`
+{-| `help == "help"`
 -}
 help : String
 help =
     "help"
 
 
-{-| `Bulma.hero == "hero"`
+{-| `hero == "hero"`
 -}
 hero : String
 hero =
     "hero"
 
 
-{-| `Bulma.heroBody == "hero-body"`
+{-| `heroBody == "hero-body"`
 -}
 heroBody : String
 heroBody =
     "hero-body"
 
 
-{-| `Bulma.heroButtons == "hero-buttons"`
+{-| `heroButtons == "hero-buttons"`
 -}
 heroButtons : String
 heroButtons =
     "hero-buttons"
 
 
-{-| `Bulma.heroFoot == "hero-foot"`
+{-| `heroFoot == "hero-foot"`
 -}
 heroFoot : String
 heroFoot =
     "hero-foot"
 
 
-{-| `Bulma.heroHead == "hero-head"`
+{-| `heroHead == "hero-head"`
 -}
 heroHead : String
 heroHead =
     "hero-head"
 
 
-{-| `Bulma.heroVideo == "hero-video"`
+{-| `heroVideo == "hero-video"`
 -}
 heroVideo : String
 heroVideo =
     "hero-video"
 
 
-{-| `Bulma.highlight == "highlight"`
+{-| `highlight == "highlight"`
 -}
 highlight : String
 highlight =
     "highlight"
 
 
-{-| `Bulma.icon == "icon"`
+{-| `icon == "icon"`
 -}
 icon : String
 icon =
     "icon"
 
 
-{-| `Bulma.image == "image"`
+{-| `image == "image"`
 -}
 image : String
 image =
     "image"
 
 
-{-| `Bulma.input == "input"`
+{-| `input == "input"`
 -}
 input : String
 input =
     "input"
 
 
-{-| `Bulma.isActive == "is-active"`
+{-| `is0 == "is-0"`
+-}
+is0 : String
+is0 =
+    "is-0"
+
+
+{-| `is1 == "is-1"`
+-}
+is1 : String
+is1 =
+    "is-1"
+
+
+{-| `is10 == "is-10"`
+-}
+is10 : String
+is10 =
+    "is-10"
+
+
+{-| `is11 == "is-11"`
+-}
+is11 : String
+is11 =
+    "is-11"
+
+
+{-| `is12 == "is-12"`
+-}
+is12 : String
+is12 =
+    "is-12"
+
+
+{-| `is128x128 == "is-128x128"`
+-}
+is128x128 : String
+is128x128 =
+    "is-128x128"
+
+
+{-| `is16by9 == "is-16by9"`
+-}
+is16by9 : String
+is16by9 =
+    "is-16by9"
+
+
+{-| `is16x16 == "is-16x16"`
+-}
+is16x16 : String
+is16x16 =
+    "is-16x16"
+
+
+{-| `is1by1 == "is-1by1"`
+-}
+is1by1 : String
+is1by1 =
+    "is-1by1"
+
+
+{-| `is2 == "is-2"`
+-}
+is2 : String
+is2 =
+    "is-2"
+
+
+{-| `is24x24 == "is-24x24"`
+-}
+is24x24 : String
+is24x24 =
+    "is-24x24"
+
+
+{-| `is2by1 == "is-2by1"`
+-}
+is2by1 : String
+is2by1 =
+    "is-2by1"
+
+
+{-| `is3 == "is-3"`
+-}
+is3 : String
+is3 =
+    "is-3"
+
+
+{-| `is32x32 == "is-32x32"`
+-}
+is32x32 : String
+is32x32 =
+    "is-32x32"
+
+
+{-| `is3by2 == "is-3by2"`
+-}
+is3by2 : String
+is3by2 =
+    "is-3by2"
+
+
+{-| `is4 == "is-4"`
+-}
+is4 : String
+is4 =
+    "is-4"
+
+
+{-| `is48x48 == "is-48x48"`
+-}
+is48x48 : String
+is48x48 =
+    "is-48x48"
+
+
+{-| `is4by3 == "is-4by3"`
+-}
+is4by3 : String
+is4by3 =
+    "is-4by3"
+
+
+{-| `is5 == "is-5"`
+-}
+is5 : String
+is5 =
+    "is-5"
+
+
+{-| `is6 == "is-6"`
+-}
+is6 : String
+is6 =
+    "is-6"
+
+
+{-| `is64x64 == "is-64x64"`
+-}
+is64x64 : String
+is64x64 =
+    "is-64x64"
+
+
+{-| `is7 == "is-7"`
+-}
+is7 : String
+is7 =
+    "is-7"
+
+
+{-| `is8 == "is-8"`
+-}
+is8 : String
+is8 =
+    "is-8"
+
+
+{-| `is9 == "is-9"`
+-}
+is9 : String
+is9 =
+    "is-9"
+
+
+{-| `is96x96 == "is-96x96"`
+-}
+is96x96 : String
+is96x96 =
+    "is-96x96"
+
+
+{-| `isActive == "is-active"`
 -}
 isActive : String
 isActive =
     "is-active"
 
 
-{-| `Bulma.isBlack == "is-black"`
+{-| `isAncestor == "is-ancestor"`
+-}
+isAncestor : String
+isAncestor =
+    "is-ancestor"
+
+
+{-| `isBlack == "is-black"`
 -}
 isBlack : String
 isBlack =
     "is-black"
 
 
-{-| `Bulma.isBlock == "is-block"`
+{-| `isBlock == "is-block"`
 -}
 isBlock : String
 isBlock =
     "is-block"
 
 
-{-| `Bulma.isCapitalized == "is-capitalized"`
+{-| `isBold == "is-bold"`
+-}
+isBold : String
+isBold =
+    "is-bold"
+
+
+{-| `isBordered == "is-bordered"`
+-}
+isBordered : String
+isBordered =
+    "is-bordered"
+
+
+{-| `isBoxed == "is-boxed"`
+-}
+isBoxed : String
+isBoxed =
+    "is-boxed"
+
+
+{-| `isCapitalized == "is-capitalized"`
 -}
 isCapitalized : String
 isCapitalized =
     "is-capitalized"
 
 
-{-| `Bulma.isCenter == "is-center"`
+{-| `isCenter == "is-center"`
 -}
 isCenter : String
 isCenter =
     "is-center"
 
 
-{-| `Bulma.isCentered == "is-centered"`
+{-| `isCentered == "is-centered"`
 -}
 isCentered : String
 isCentered =
     "is-centered"
 
 
-{-| `Bulma.isClearfix == "is-clearfix"`
+{-| `isChild == "is-child"`
+-}
+isChild : String
+isChild =
+    "is-child"
+
+
+{-| `isClearfix == "is-clearfix"`
 -}
 isClearfix : String
 isClearfix =
     "is-clearfix"
 
 
-{-| `Bulma.isClipped == "is-clipped"`
+{-| `isClipped == "is-clipped"`
 -}
 isClipped : String
 isClipped =
     "is-clipped"
 
 
-{-| `Bulma.isCurrent == "is-current"`
+{-| `isCurrent == "is-current"`
 -}
 isCurrent : String
 isCurrent =
     "is-current"
 
 
-{-| `Bulma.isDanger == "is-danger"`
+{-| `isDanger == "is-danger"`
 -}
 isDanger : String
 isDanger =
     "is-danger"
 
 
-{-| `Bulma.isDark == "is-dark"`
+{-| `isDark == "is-dark"`
 -}
 isDark : String
 isDark =
     "is-dark"
 
 
-{-| `Bulma.isExpanded == "is-expanded"`
+{-| `isDelete == "is-delete"`
+-}
+isDelete : String
+isDelete =
+    "is-delete"
+
+
+{-| `isDisabled == "is-disabled"`
+-}
+isDisabled : String
+isDisabled =
+    "is-disabled"
+
+
+{-| `isEmpty == "is-empty"`
+-}
+isEmpty : String
+isEmpty =
+    "is-empty"
+
+
+{-| `isExpanded == "is-expanded"`
 -}
 isExpanded : String
 isExpanded =
     "is-expanded"
 
 
-{-| `Bulma.isFlex == "is-flex"`
+{-| `isFixedBottom == "is-fixed-bottom"`
+-}
+isFixedBottom : String
+isFixedBottom =
+    "is-fixed-bottom"
+
+
+{-| `isFixedTop == "is-fixed-top"`
+-}
+isFixedTop : String
+isFixedTop =
+    "is-fixed-top"
+
+
+{-| `isFlex == "is-flex"`
 -}
 isFlex : String
 isFlex =
     "is-flex"
 
 
-{-| `Bulma.isFlexible == "is-flexible"`
+{-| `isFlexible == "is-flexible"`
 -}
 isFlexible : String
 isFlexible =
     "is-flexible"
 
 
-{-| `Bulma.isFocused == "is-focused"`
+{-| `isFocused == "is-focused"`
 -}
 isFocused : String
 isFocused =
     "is-focused"
 
 
-{-| `Bulma.isHidden == "is-hidden"`
+{-| `isFourFifths == "is-four-fifths"`
+-}
+isFourFifths : String
+isFourFifths =
+    "is-four-fifths"
+
+
+{-| `isFull == "is-full"`
+-}
+isFull : String
+isFull =
+    "is-full"
+
+
+{-| `isFullheight == "is-fullheight"`
+-}
+isFullheight : String
+isFullheight =
+    "is-fullheight"
+
+
+{-| `isFullwidth == "is-fullwidth"`
+-}
+isFullwidth : String
+isFullwidth =
+    "is-fullwidth"
+
+
+{-| `isGapless == "is-gapless"`
+-}
+isGapless : String
+isGapless =
+    "is-gapless"
+
+
+{-| `isGrouped == "is-grouped"`
+-}
+isGrouped : String
+isGrouped =
+    "is-grouped"
+
+
+{-| `isGroupedCentered == "is-grouped-centered"`
+-}
+isGroupedCentered : String
+isGroupedCentered =
+    "is-grouped-centered"
+
+
+{-| `isGroupedMultiline == "is-grouped-multiline"`
+-}
+isGroupedMultiline : String
+isGroupedMultiline =
+    "is-grouped-multiline"
+
+
+{-| `isGroupedRight == "is-grouped-right"`
+-}
+isGroupedRight : String
+isGroupedRight =
+    "is-grouped-right"
+
+
+{-| `isHalf == "is-half"`
+-}
+isHalf : String
+isHalf =
+    "is-half"
+
+
+{-| `isHalfheight == "is-halfheight"`
+-}
+isHalfheight : String
+isHalfheight =
+    "is-halfheight"
+
+
+{-| `isHidden == "is-hidden"`
 -}
 isHidden : String
 isHidden =
     "is-hidden"
 
 
-{-| `Bulma.isHovered == "is-hovered"`
+{-| `isHoverable == "is-hoverable"`
+-}
+isHoverable : String
+isHoverable =
+    "is-hoverable"
+
+
+{-| `isHovered == "is-hovered"`
 -}
 isHovered : String
 isHovered =
     "is-hovered"
 
 
-{-| `Bulma.isInfo == "is-info"`
+{-| `isInfo == "is-info"`
 -}
 isInfo : String
 isInfo =
     "is-info"
 
 
-{-| `Bulma.isInline == "is-inline"`
+{-| `isInline == "is-inline"`
 -}
 isInline : String
 isInline =
     "is-inline"
 
 
-{-| `Bulma.isInlineBlock == "is-inline-block"`
+{-| `isInlineBlock == "is-inline-block"`
 -}
 isInlineBlock : String
 isInlineBlock =
     "is-inline-block"
 
 
-{-| `Bulma.isInlineFlex == "is-inline-flex"`
+{-| `isInlineFlex == "is-inline-flex"`
 -}
 isInlineFlex : String
 isInlineFlex =
     "is-inline-flex"
 
 
-{-| `Bulma.isInvisible == "is-invisible"`
+{-| `isInverted == "is-inverted"`
+-}
+isInverted : String
+isInverted =
+    "is-inverted"
+
+
+{-| `isInvisible == "is-invisible"`
 -}
 isInvisible : String
 isInvisible =
     "is-invisible"
 
 
-{-| `Bulma.isItalic == "is-italic"`
+{-| `isItalic == "is-italic"`
 -}
 isItalic : String
 isItalic =
     "is-italic"
 
 
-{-| `Bulma.isLarge == "is-large"`
+{-| `isLarge == "is-large"`
 -}
 isLarge : String
 isLarge =
     "is-large"
 
 
-{-| `Bulma.isLeft == "is-left"`
+{-| `isLeft == "is-left"`
 -}
 isLeft : String
 isLeft =
     "is-left"
 
 
-{-| `Bulma.isLight == "is-light"`
+{-| `isLight == "is-light"`
 -}
 isLight : String
 isLight =
     "is-light"
 
 
-{-| `Bulma.isLink == "is-link"`
+{-| `isLink == "is-link"`
 -}
 isLink : String
 isLink =
     "is-link"
 
 
-{-| `Bulma.isLowercase == "is-lowercase"`
+{-| `isLoading == "is-loading"`
+-}
+isLoading : String
+isLoading =
+    "is-loading"
+
+
+{-| `isLowercase == "is-lowercase"`
 -}
 isLowercase : String
 isLowercase =
     "is-lowercase"
 
 
-{-| `Bulma.isMarginless == "is-marginless"`
+{-| `isMarginless == "is-marginless"`
 -}
 isMarginless : String
 isMarginless =
     "is-marginless"
 
 
-{-| `Bulma.isMedium == "is-medium"`
+{-| `isMedium == "is-medium"`
 -}
 isMedium : String
 isMedium =
     "is-medium"
 
 
-{-| `Bulma.isNarrow == "is-narrow"`
+{-| `isMobile == "is-mobile"`
+-}
+isMobile : String
+isMobile =
+    "is-mobile"
+
+
+{-| `isMultiline == "is-multiline"`
+-}
+isMultiline : String
+isMultiline =
+    "is-multiline"
+
+
+{-| `isMultiple == "is-multiple"`
+-}
+isMultiple : String
+isMultiple =
+    "is-multiple"
+
+
+{-| `isNarrow == "is-narrow"`
 -}
 isNarrow : String
 isNarrow =
     "is-narrow"
 
 
-{-| `Bulma.isOverlay == "is-overlay"`
+{-| `isOffset1 == "is-offset-1"`
+-}
+isOffset1 : String
+isOffset1 =
+    "is-offset-1"
+
+
+{-| `isOffset10 == "is-offset-10"`
+-}
+isOffset10 : String
+isOffset10 =
+    "is-offset-10"
+
+
+{-| `isOffset11 == "is-offset-11"`
+-}
+isOffset11 : String
+isOffset11 =
+    "is-offset-11"
+
+
+{-| `isOffset12 == "is-offset-12"`
+-}
+isOffset12 : String
+isOffset12 =
+    "is-offset-12"
+
+
+{-| `isOffset2 == "is-offset-2"`
+-}
+isOffset2 : String
+isOffset2 =
+    "is-offset-2"
+
+
+{-| `isOffset3 == "is-offset-3"`
+-}
+isOffset3 : String
+isOffset3 =
+    "is-offset-3"
+
+
+{-| `isOffset4 == "is-offset-4"`
+-}
+isOffset4 : String
+isOffset4 =
+    "is-offset-4"
+
+
+{-| `isOffset5 == "is-offset-5"`
+-}
+isOffset5 : String
+isOffset5 =
+    "is-offset-5"
+
+
+{-| `isOffset6 == "is-offset-6"`
+-}
+isOffset6 : String
+isOffset6 =
+    "is-offset-6"
+
+
+{-| `isOffset7 == "is-offset-7"`
+-}
+isOffset7 : String
+isOffset7 =
+    "is-offset-7"
+
+
+{-| `isOffset8 == "is-offset-8"`
+-}
+isOffset8 : String
+isOffset8 =
+    "is-offset-8"
+
+
+{-| `isOffset9 == "is-offset-9"`
+-}
+isOffset9 : String
+isOffset9 =
+    "is-offset-9"
+
+
+{-| `isOffsetFourFifths == "is-offset-four-fifths"`
+-}
+isOffsetFourFifths : String
+isOffsetFourFifths =
+    "is-offset-four-fifths"
+
+
+{-| `isOffsetHalf == "is-offset-half"`
+-}
+isOffsetHalf : String
+isOffsetHalf =
+    "is-offset-half"
+
+
+{-| `isOffsetOneFifth == "is-offset-one-fifth"`
+-}
+isOffsetOneFifth : String
+isOffsetOneFifth =
+    "is-offset-one-fifth"
+
+
+{-| `isOffsetOneQuarter == "is-offset-one-quarter"`
+-}
+isOffsetOneQuarter : String
+isOffsetOneQuarter =
+    "is-offset-one-quarter"
+
+
+{-| `isOffsetOneThird == "is-offset-one-third"`
+-}
+isOffsetOneThird : String
+isOffsetOneThird =
+    "is-offset-one-third"
+
+
+{-| `isOffsetThreeFifths == "is-offset-three-fifths"`
+-}
+isOffsetThreeFifths : String
+isOffsetThreeFifths =
+    "is-offset-three-fifths"
+
+
+{-| `isOffsetThreeQuarters == "is-offset-three-quarters"`
+-}
+isOffsetThreeQuarters : String
+isOffsetThreeQuarters =
+    "is-offset-three-quarters"
+
+
+{-| `isOffsetTwoFifths == "is-offset-two-fifths"`
+-}
+isOffsetTwoFifths : String
+isOffsetTwoFifths =
+    "is-offset-two-fifths"
+
+
+{-| `isOffsetTwoThirds == "is-offset-two-thirds"`
+-}
+isOffsetTwoThirds : String
+isOffsetTwoThirds =
+    "is-offset-two-thirds"
+
+
+{-| `isOneFifth == "is-one-fifth"`
+-}
+isOneFifth : String
+isOneFifth =
+    "is-one-fifth"
+
+
+{-| `isOneQuarter == "is-one-quarter"`
+-}
+isOneQuarter : String
+isOneQuarter =
+    "is-one-quarter"
+
+
+{-| `isOneThird == "is-one-third"`
+-}
+isOneThird : String
+isOneThird =
+    "is-one-third"
+
+
+{-| `isOutlined == "is-outlined"`
+-}
+isOutlined : String
+isOutlined =
+    "is-outlined"
+
+
+{-| `isOverlay == "is-overlay"`
 -}
 isOverlay : String
 isOverlay =
     "is-overlay"
 
 
-{-| `Bulma.isPaddingless == "is-paddingless"`
+{-| `isPaddingless == "is-paddingless"`
 -}
 isPaddingless : String
 isPaddingless =
     "is-paddingless"
 
 
-{-| `Bulma.isPrimary == "is-primary"`
+{-| `isParent == "is-parent"`
+-}
+isParent : String
+isParent =
+    "is-parent"
+
+
+{-| `isPrimary == "is-primary"`
 -}
 isPrimary : String
 isPrimary =
     "is-primary"
 
 
-{-| `Bulma.isPulledLeft == "is-pulled-left"`
+{-| `isPulledLeft == "is-pulled-left"`
 -}
 isPulledLeft : String
 isPulledLeft =
     "is-pulled-left"
 
 
-{-| `Bulma.isPulledRight == "is-pulled-right"`
+{-| `isPulledRight == "is-pulled-right"`
 -}
 isPulledRight : String
 isPulledRight =
     "is-pulled-right"
 
 
-{-| `Bulma.isRadiusless == "is-radiusless"`
+{-| `isRadiusless == "is-radiusless"`
 -}
 isRadiusless : String
 isRadiusless =
     "is-radiusless"
 
 
-{-| `Bulma.isRight == "is-right"`
+{-| `isRight == "is-right"`
 -}
 isRight : String
 isRight =
     "is-right"
 
 
-{-| `Bulma.isRounded == "is-rounded"`
+{-| `isRounded == "is-rounded"`
 -}
 isRounded : String
 isRounded =
     "is-rounded"
 
 
-{-| `Bulma.isSelected == "is-selected"`
+{-| `isSelected == "is-selected"`
 -}
 isSelected : String
 isSelected =
     "is-selected"
 
 
-{-| `Bulma.isShadowless == "is-shadowless"`
+{-| `isShadowless == "is-shadowless"`
 -}
 isShadowless : String
 isShadowless =
     "is-shadowless"
 
 
-{-| `Bulma.isSize1 == "is-size-1"`
+{-| `isSize1 == "is-size-1"`
 -}
 isSize1 : String
 isSize1 =
     "is-size-1"
 
 
-{-| `Bulma.isSize2 == "is-size-2"`
+{-| `isSize2 == "is-size-2"`
 -}
 isSize2 : String
 isSize2 =
     "is-size-2"
 
 
-{-| `Bulma.isSize3 == "is-size-3"`
+{-| `isSize3 == "is-size-3"`
 -}
 isSize3 : String
 isSize3 =
     "is-size-3"
 
 
-{-| `Bulma.isSize4 == "is-size-4"`
+{-| `isSize4 == "is-size-4"`
 -}
 isSize4 : String
 isSize4 =
     "is-size-4"
 
 
-{-| `Bulma.isSize5 == "is-size-5"`
+{-| `isSize5 == "is-size-5"`
 -}
 isSize5 : String
 isSize5 =
     "is-size-5"
 
 
-{-| `Bulma.isSize6 == "is-size-6"`
+{-| `isSize6 == "is-size-6"`
 -}
 isSize6 : String
 isSize6 =
     "is-size-6"
 
 
-{-| `Bulma.isSize7 == "is-size-7"`
+{-| `isSize7 == "is-size-7"`
 -}
 isSize7 : String
 isSize7 =
     "is-size-7"
 
 
-{-| `Bulma.isSmall == "is-small"`
+{-| `isSmall == "is-small"`
 -}
 isSmall : String
 isSmall =
     "is-small"
 
 
-{-| `Bulma.isSuccess == "is-success"`
+{-| `isSpaced == "is-spaced"`
+-}
+isSpaced : String
+isSpaced =
+    "is-spaced"
+
+
+{-| `isSquare == "is-square"`
+-}
+isSquare : String
+isSquare =
+    "is-square"
+
+
+{-| `isStatic == "is-static"`
+-}
+isStatic : String
+isStatic =
+    "is-static"
+
+
+{-| `isStriped == "is-striped"`
+-}
+isStriped : String
+isStriped =
+    "is-striped"
+
+
+{-| `isSuccess == "is-success"`
 -}
 isSuccess : String
 isSuccess =
     "is-success"
 
 
-{-| `Bulma.isTab == "is-tab"`
+{-| `isTab == "is-tab"`
 -}
 isTab : String
 isTab =
     "is-tab"
 
 
-{-| `Bulma.isTransparent == "is-transparent"`
+{-| `isText == "is-text"`
+-}
+isText : String
+isText =
+    "is-text"
+
+
+{-| `isThreeFifths == "is-three-fifths"`
+-}
+isThreeFifths : String
+isThreeFifths =
+    "is-three-fifths"
+
+
+{-| `isThreeQuarters == "is-three-quarters"`
+-}
+isThreeQuarters : String
+isThreeQuarters =
+    "is-three-quarters"
+
+
+{-| `isToggle == "is-toggle"`
+-}
+isToggle : String
+isToggle =
+    "is-toggle"
+
+
+{-| `isToggleRounded == "is-toggle-rounded"`
+-}
+isToggleRounded : String
+isToggleRounded =
+    "is-toggle-rounded"
+
+
+{-| `isTransparent == "is-transparent"`
 -}
 isTransparent : String
 isTransparent =
     "is-transparent"
 
 
-{-| `Bulma.isUnselectable == "is-unselectable"`
+{-| `isTwoFifths == "is-two-fifths"`
+-}
+isTwoFifths : String
+isTwoFifths =
+    "is-two-fifths"
+
+
+{-| `isTwoThirds == "is-two-thirds"`
+-}
+isTwoThirds : String
+isTwoThirds =
+    "is-two-thirds"
+
+
+{-| `isUnselectable == "is-unselectable"`
 -}
 isUnselectable : String
 isUnselectable =
     "is-unselectable"
 
 
-{-| `Bulma.isUppercase == "is-uppercase"`
+{-| `isUp == "is-up"`
+-}
+isUp : String
+isUp =
+    "is-up"
+
+
+{-| `isUppercase == "is-uppercase"`
 -}
 isUppercase : String
 isUppercase =
     "is-uppercase"
 
 
-{-| `Bulma.isWarning == "is-warning"`
+{-| `isVariable == "is-variable"`
+-}
+isVariable : String
+isVariable =
+    "is-variable"
+
+
+{-| `isVcentered == "is-vcentered"`
+-}
+isVcentered : String
+isVcentered =
+    "is-vcentered"
+
+
+{-| `isVertical == "is-vertical"`
+-}
+isVertical : String
+isVertical =
+    "is-vertical"
+
+
+{-| `isWarning == "is-warning"`
 -}
 isWarning : String
 isWarning =
     "is-warning"
 
 
-{-| `Bulma.isWhite == "is-white"`
+{-| `isWhite == "is-white"`
 -}
 isWhite : String
 isWhite =
     "is-white"
 
 
-{-| `Bulma.isWrapped == "is-wrapped"`
+{-| `isWrapped == "is-wrapped"`
 -}
 isWrapped : String
 isWrapped =
     "is-wrapped"
 
 
-{-| `Bulma.label == "label"`
+{-| `label == "label"`
 -}
 label : String
 label =
     "label"
 
 
-{-| `Bulma.level == "level"`
+{-| `level == "level"`
 -}
 level : String
 level =
     "level"
 
 
-{-| `Bulma.levelItem == "level-item"`
+{-| `levelItem == "level-item"`
 -}
 levelItem : String
 levelItem =
     "level-item"
 
 
-{-| `Bulma.levelLeft == "level-left"`
+{-| `levelLeft == "level-left"`
 -}
 levelLeft : String
 levelLeft =
     "level-left"
 
 
-{-| `Bulma.levelRight == "level-right"`
+{-| `levelRight == "level-right"`
 -}
 levelRight : String
 levelRight =
     "level-right"
 
 
-{-| `Bulma.loader == "loader"`
+{-| `loader == "loader"`
 -}
 loader : String
 loader =
     "loader"
 
 
-{-| `Bulma.media == "media"`
+{-| `media == "media"`
 -}
 media : String
 media =
     "media"
 
 
-{-| `Bulma.mediaContent == "media-content"`
+{-| `mediaContent == "media-content"`
 -}
 mediaContent : String
 mediaContent =
     "media-content"
 
 
-{-| `Bulma.mediaLeft == "media-left"`
+{-| `mediaLeft == "media-left"`
 -}
 mediaLeft : String
 mediaLeft =
     "media-left"
 
 
-{-| `Bulma.mediaRight == "media-right"`
+{-| `mediaRight == "media-right"`
 -}
 mediaRight : String
 mediaRight =
     "media-right"
 
 
-{-| `Bulma.menu == "menu"`
+{-| `menu == "menu"`
 -}
 menu : String
 menu =
     "menu"
 
 
-{-| `Bulma.menuLabel == "menu-label"`
+{-| `menuLabel == "menu-label"`
 -}
 menuLabel : String
 menuLabel =
     "menu-label"
 
 
-{-| `Bulma.menuList == "menu-list"`
+{-| `menuList == "menu-list"`
 -}
 menuList : String
 menuList =
     "menu-list"
 
 
-{-| `Bulma.message == "message"`
+{-| `message == "message"`
 -}
 message : String
 message =
     "message"
 
 
-{-| `Bulma.messageBody == "message-body"`
+{-| `messageBody == "message-body"`
 -}
 messageBody : String
 messageBody =
     "message-body"
 
 
-{-| `Bulma.messageHeader == "message-header"`
+{-| `messageHeader == "message-header"`
 -}
 messageHeader : String
 messageHeader =
     "message-header"
 
 
-{-| `Bulma.modal == "modal"`
+{-| `modal == "modal"`
 -}
 modal : String
 modal =
     "modal"
 
 
-{-| `Bulma.modalBackground == "modal-background"`
+{-| `modalBackground == "modal-background"`
 -}
 modalBackground : String
 modalBackground =
     "modal-background"
 
 
-{-| `Bulma.modalCard == "modal-card"`
+{-| `modalCard == "modal-card"`
 -}
 modalCard : String
 modalCard =
     "modal-card"
 
 
-{-| `Bulma.modalCardBody == "modal-card-body"`
+{-| `modalCardBody == "modal-card-body"`
 -}
 modalCardBody : String
 modalCardBody =
     "modal-card-body"
 
 
-{-| `Bulma.modalCardFoot == "modal-card-foot"`
+{-| `modalCardFoot == "modal-card-foot"`
 -}
 modalCardFoot : String
 modalCardFoot =
     "modal-card-foot"
 
 
-{-| `Bulma.modalCardHead == "modal-card-head"`
+{-| `modalCardHead == "modal-card-head"`
 -}
 modalCardHead : String
 modalCardHead =
     "modal-card-head"
 
 
-{-| `Bulma.modalCardTitle == "modal-card-title"`
+{-| `modalCardTitle == "modal-card-title"`
 -}
 modalCardTitle : String
 modalCardTitle =
     "modal-card-title"
 
 
-{-| `Bulma.modalClose == "modal-close"`
+{-| `modalClose == "modal-close"`
 -}
 modalClose : String
 modalClose =
     "modal-close"
 
 
-{-| `Bulma.modalContent == "modal-content"`
+{-| `modalContent == "modal-content"`
 -}
 modalContent : String
 modalContent =
     "modal-content"
 
 
-{-| `Bulma.navbar == "navbar"`
+{-| `navbar == "navbar"`
 -}
 navbar : String
 navbar =
     "navbar"
 
 
-{-| `Bulma.navbarBrand == "navbar-brand"`
+{-| `navbarBrand == "navbar-brand"`
 -}
 navbarBrand : String
 navbarBrand =
     "navbar-brand"
 
 
-{-| `Bulma.navbarBurger == "navbar-burger"`
+{-| `navbarBurger == "navbar-burger"`
 -}
 navbarBurger : String
 navbarBurger =
     "navbar-burger"
 
 
-{-| `Bulma.navbarContent == "navbar-content"`
+{-| `navbarContent == "navbar-content"`
 -}
 navbarContent : String
 navbarContent =
     "navbar-content"
 
 
-{-| `Bulma.navbarDivider == "navbar-divider"`
+{-| `navbarDivider == "navbar-divider"`
 -}
 navbarDivider : String
 navbarDivider =
     "navbar-divider"
 
 
-{-| `Bulma.navbarDropdown == "navbar-dropdown"`
+{-| `navbarDropdown == "navbar-dropdown"`
 -}
 navbarDropdown : String
 navbarDropdown =
     "navbar-dropdown"
 
 
-{-| `Bulma.navbarItem == "navbar-item"`
+{-| `navbarItem == "navbar-item"`
 -}
 navbarItem : String
 navbarItem =
     "navbar-item"
 
 
-{-| `Bulma.navbarLink == "navbar-link"`
+{-| `navbarLink == "navbar-link"`
 -}
 navbarLink : String
 navbarLink =
     "navbar-link"
 
 
-{-| `Bulma.navbarMenu == "navbar-menu"`
+{-| `navbarMenu == "navbar-menu"`
 -}
 navbarMenu : String
 navbarMenu =
     "navbar-menu"
 
 
-{-| `Bulma.navbarTabs == "navbar-tabs"`
+{-| `navbarTabs == "navbar-tabs"`
 -}
 navbarTabs : String
 navbarTabs =
     "navbar-tabs"
 
 
-{-| `Bulma.notification == "notification"`
+{-| `notification == "notification"`
 -}
 notification : String
 notification =
     "notification"
 
 
-{-| `Bulma.number == "number"`
+{-| `number == "number"`
 -}
 number : String
 number =
     "number"
 
 
-{-| `Bulma.pagination == "pagination"`
+{-| `pagination == "pagination"`
 -}
 pagination : String
 pagination =
     "pagination"
 
 
-{-| `Bulma.paginationEllipsis == "pagination-ellipsis"`
+{-| `paginationEllipsis == "pagination-ellipsis"`
 -}
 paginationEllipsis : String
 paginationEllipsis =
     "pagination-ellipsis"
 
 
-{-| `Bulma.paginationLink == "pagination-link"`
+{-| `paginationLink == "pagination-link"`
 -}
 paginationLink : String
 paginationLink =
     "pagination-link"
 
 
-{-| `Bulma.paginationList == "pagination-list"`
+{-| `paginationList == "pagination-list"`
 -}
 paginationList : String
 paginationList =
     "pagination-list"
 
 
-{-| `Bulma.paginationNext == "pagination-next"`
+{-| `paginationNext == "pagination-next"`
 -}
 paginationNext : String
 paginationNext =
     "pagination-next"
 
 
-{-| `Bulma.paginationPrevious == "pagination-previous"`
+{-| `paginationPrevious == "pagination-previous"`
 -}
 paginationPrevious : String
 paginationPrevious =
     "pagination-previous"
 
 
-{-| `Bulma.panel == "panel"`
+{-| `panel == "panel"`
 -}
 panel : String
 panel =
     "panel"
 
 
-{-| `Bulma.panelBlock == "panel-block"`
+{-| `panelBlock == "panel-block"`
 -}
 panelBlock : String
 panelBlock =
     "panel-block"
 
 
-{-| `Bulma.panelHeading == "panel-heading"`
+{-| `panelHeading == "panel-heading"`
 -}
 panelHeading : String
 panelHeading =
     "panel-heading"
 
 
-{-| `Bulma.panelIcon == "panel-icon"`
+{-| `panelIcon == "panel-icon"`
 -}
 panelIcon : String
 panelIcon =
     "panel-icon"
 
 
-{-| `Bulma.panelList == "panel-list"`
+{-| `panelList == "panel-list"`
 -}
 panelList : String
 panelList =
     "panel-list"
 
 
-{-| `Bulma.panelTabs == "panel-tabs"`
+{-| `panelTabs == "panel-tabs"`
 -}
 panelTabs : String
 panelTabs =
     "panel-tabs"
 
 
-{-| `Bulma.progress == "progress"`
+{-| `progress == "progress"`
 -}
 progress : String
 progress =
     "progress"
 
 
-{-| `Bulma.radio == "radio"`
+{-| `radio == "radio"`
 -}
 radio : String
 radio =
     "radio"
 
 
-{-| `Bulma.section == "section"`
+{-| `section == "section"`
 -}
 section : String
 section =
     "section"
 
 
-{-| `Bulma.select == "select"`
+{-| `select == "select"`
 -}
 select : String
 select =
     "select"
 
 
-{-| `Bulma.subtitle == "subtitle"`
+{-| `subtitle == "subtitle"`
 -}
 subtitle : String
 subtitle =
     "subtitle"
 
 
-{-| `Bulma.table == "table"`
+{-| `table == "table"`
 -}
 table : String
 table =
     "table"
 
 
-{-| `Bulma.tabs == "tabs"`
+{-| `tabs == "tabs"`
 -}
 tabs : String
 tabs =
     "tabs"
 
 
-{-| `Bulma.tag == "tag"`
+{-| `tag == "tag"`
 -}
 tag : String
 tag =
     "tag"
 
 
-{-| `Bulma.tags == "tags"`
+{-| `tags == "tags"`
 -}
 tags : String
 tags =
     "tags"
 
 
-{-| `Bulma.textarea == "textarea"`
+{-| `textarea == "textarea"`
 -}
 textarea : String
 textarea =
     "textarea"
 
 
-{-| `Bulma.tile == "tile"`
+{-| `tile == "tile"`
 -}
 tile : String
 tile =
     "tile"
 
 
-{-| `Bulma.title == "title"`
+{-| `title == "title"`
 -}
 title : String
 title =

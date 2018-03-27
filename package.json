@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "generate-classes": "node generate.js"
+  },
+  "devDependencies": {
+    "css": "^2.2.1",
+    "node-fetch": "^2.1.2"
+  }
+}

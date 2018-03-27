@@ -4,3 +4,5 @@ elm-stuff
 repl-temp-*
 # generated documentation
 documentation.json
+# npm packages
+node_modules/

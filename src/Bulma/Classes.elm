@@ -42,6 +42,25 @@ module Bulma.Classes
         , hasAddonsFullwidth
         , hasAddonsRight
         , hasArrowSeparator
+        , hasBackgroundBlack
+        , hasBackgroundBlackBis
+        , hasBackgroundBlackTer
+        , hasBackgroundDanger
+        , hasBackgroundDark
+        , hasBackgroundGrey
+        , hasBackgroundGreyDark
+        , hasBackgroundGreyDarker
+        , hasBackgroundGreyLight
+        , hasBackgroundGreyLighter
+        , hasBackgroundInfo
+        , hasBackgroundLight
+        , hasBackgroundLink
+        , hasBackgroundPrimary
+        , hasBackgroundSuccess
+        , hasBackgroundWarning
+        , hasBackgroundWhite
+        , hasBackgroundWhiteBis
+        , hasBackgroundWhiteTer
         , hasBulletSeparator
         , hasDotSeparator
         , hasDropdown
@@ -59,6 +78,8 @@ module Bulma.Classes
         , hasNavbarFixedTopDesktop
         , hasNavbarFixedTopTouch
         , hasShadow
+        , hasSpacedNavbarFixedBottom
+        , hasSpacedNavbarFixedTop
         , hasSucceedsSeparator
         , hasTextBlack
         , hasTextBlackBis
@@ -168,6 +189,8 @@ module Bulma.Classes
         , is16by9
         , is16x16
         , is1by1
+        , is1by2
+        , is1by3
         , is2
         , is2Desktop
         , is2Fullhd
@@ -177,6 +200,7 @@ module Bulma.Classes
         , is2Widescreen
         , is24x24
         , is2by1
+        , is2by3
         , is3
         , is3Desktop
         , is3Fullhd
@@ -185,7 +209,10 @@ module Bulma.Classes
         , is3Touch
         , is3Widescreen
         , is32x32
+        , is3by1
         , is3by2
+        , is3by4
+        , is3by5
         , is4
         , is4Desktop
         , is4Fullhd
@@ -195,6 +222,7 @@ module Bulma.Classes
         , is4Widescreen
         , is48x48
         , is4by3
+        , is4by5
         , is5
         , is5Desktop
         , is5Fullhd
@@ -202,6 +230,8 @@ module Bulma.Classes
         , is5Tablet
         , is5Touch
         , is5Widescreen
+        , is5by3
+        , is5by4
         , is6
         , is6Desktop
         , is6Fullhd
@@ -232,6 +262,7 @@ module Bulma.Classes
         , is9Touch
         , is9Widescreen
         , is96x96
+        , is9by16
         , isActive
         , isAncestor
         , isBlack
@@ -721,6 +752,7 @@ module Bulma.Classes
         , select
         , subtitle
         , table
+        , tableContainer
         , tabs
         , tag
         , tags
@@ -791,6 +823,25 @@ Example usage:
 @docs hasAddonsFullwidth
 @docs hasAddonsRight
 @docs hasArrowSeparator
+@docs hasBackgroundBlack
+@docs hasBackgroundBlackBis
+@docs hasBackgroundBlackTer
+@docs hasBackgroundDanger
+@docs hasBackgroundDark
+@docs hasBackgroundGrey
+@docs hasBackgroundGreyDark
+@docs hasBackgroundGreyDarker
+@docs hasBackgroundGreyLight
+@docs hasBackgroundGreyLighter
+@docs hasBackgroundInfo
+@docs hasBackgroundLight
+@docs hasBackgroundLink
+@docs hasBackgroundPrimary
+@docs hasBackgroundSuccess
+@docs hasBackgroundWarning
+@docs hasBackgroundWhite
+@docs hasBackgroundWhiteBis
+@docs hasBackgroundWhiteTer
 @docs hasBulletSeparator
 @docs hasDotSeparator
 @docs hasDropdown
@@ -808,6 +859,8 @@ Example usage:
 @docs hasNavbarFixedTopDesktop
 @docs hasNavbarFixedTopTouch
 @docs hasShadow
+@docs hasSpacedNavbarFixedBottom
+@docs hasSpacedNavbarFixedTop
 @docs hasSucceedsSeparator
 @docs hasTextBlack
 @docs hasTextBlackBis
@@ -917,6 +970,8 @@ Example usage:
 @docs is16by9
 @docs is16x16
 @docs is1by1
+@docs is1by2
+@docs is1by3
 @docs is2
 @docs is2Desktop
 @docs is2Fullhd
@@ -926,6 +981,7 @@ Example usage:
 @docs is2Widescreen
 @docs is24x24
 @docs is2by1
+@docs is2by3
 @docs is3
 @docs is3Desktop
 @docs is3Fullhd
@@ -934,7 +990,10 @@ Example usage:
 @docs is3Touch
 @docs is3Widescreen
 @docs is32x32
+@docs is3by1
 @docs is3by2
+@docs is3by4
+@docs is3by5
 @docs is4
 @docs is4Desktop
 @docs is4Fullhd
@@ -944,6 +1003,7 @@ Example usage:
 @docs is4Widescreen
 @docs is48x48
 @docs is4by3
+@docs is4by5
 @docs is5
 @docs is5Desktop
 @docs is5Fullhd
@@ -951,6 +1011,8 @@ Example usage:
 @docs is5Tablet
 @docs is5Touch
 @docs is5Widescreen
+@docs is5by3
+@docs is5by4
 @docs is6
 @docs is6Desktop
 @docs is6Fullhd
@@ -981,6 +1043,7 @@ Example usage:
 @docs is9Touch
 @docs is9Widescreen
 @docs is96x96
+@docs is9by16
 @docs isActive
 @docs isAncestor
 @docs isBlack
@@ -1470,6 +1533,7 @@ Example usage:
 @docs select
 @docs subtitle
 @docs table
+@docs tableContainer
 @docs tabs
 @docs tag
 @docs tags
@@ -1767,6 +1831,139 @@ hasArrowSeparator =
     "has-arrow-separator"
 
 
+{-| `hasBackgroundBlack == "has-background-black"`
+-}
+hasBackgroundBlack : String
+hasBackgroundBlack =
+    "has-background-black"
+
+
+{-| `hasBackgroundBlackBis == "has-background-black-bis"`
+-}
+hasBackgroundBlackBis : String
+hasBackgroundBlackBis =
+    "has-background-black-bis"
+
+
+{-| `hasBackgroundBlackTer == "has-background-black-ter"`
+-}
+hasBackgroundBlackTer : String
+hasBackgroundBlackTer =
+    "has-background-black-ter"
+
+
+{-| `hasBackgroundDanger == "has-background-danger"`
+-}
+hasBackgroundDanger : String
+hasBackgroundDanger =
+    "has-background-danger"
+
+
+{-| `hasBackgroundDark == "has-background-dark"`
+-}
+hasBackgroundDark : String
+hasBackgroundDark =
+    "has-background-dark"
+
+
+{-| `hasBackgroundGrey == "has-background-grey"`
+-}
+hasBackgroundGrey : String
+hasBackgroundGrey =
+    "has-background-grey"
+
+
+{-| `hasBackgroundGreyDark == "has-background-grey-dark"`
+-}
+hasBackgroundGreyDark : String
+hasBackgroundGreyDark =
+    "has-background-grey-dark"
+
+
+{-| `hasBackgroundGreyDarker == "has-background-grey-darker"`
+-}
+hasBackgroundGreyDarker : String
+hasBackgroundGreyDarker =
+    "has-background-grey-darker"
+
+
+{-| `hasBackgroundGreyLight == "has-background-grey-light"`
+-}
+hasBackgroundGreyLight : String
+hasBackgroundGreyLight =
+    "has-background-grey-light"
+
+
+{-| `hasBackgroundGreyLighter == "has-background-grey-lighter"`
+-}
+hasBackgroundGreyLighter : String
+hasBackgroundGreyLighter =
+    "has-background-grey-lighter"
+
+
+{-| `hasBackgroundInfo == "has-background-info"`
+-}
+hasBackgroundInfo : String
+hasBackgroundInfo =
+    "has-background-info"
+
+
+{-| `hasBackgroundLight == "has-background-light"`
+-}
+hasBackgroundLight : String
+hasBackgroundLight =
+    "has-background-light"
+
+
+{-| `hasBackgroundLink == "has-background-link"`
+-}
+hasBackgroundLink : String
+hasBackgroundLink =
+    "has-background-link"
+
+
+{-| `hasBackgroundPrimary == "has-background-primary"`
+-}
+hasBackgroundPrimary : String
+hasBackgroundPrimary =
+    "has-background-primary"
+
+
+{-| `hasBackgroundSuccess == "has-background-success"`
+-}
+hasBackgroundSuccess : String
+hasBackgroundSuccess =
+    "has-background-success"
+
+
+{-| `hasBackgroundWarning == "has-background-warning"`
+-}
+hasBackgroundWarning : String
+hasBackgroundWarning =
+    "has-background-warning"
+
+
+{-| `hasBackgroundWhite == "has-background-white"`
+-}
+hasBackgroundWhite : String
+hasBackgroundWhite =
+    "has-background-white"
+
+
+{-| `hasBackgroundWhiteBis == "has-background-white-bis"`
+-}
+hasBackgroundWhiteBis : String
+hasBackgroundWhiteBis =
+    "has-background-white-bis"
+
+
+{-| `hasBackgroundWhiteTer == "has-background-white-ter"`
+-}
+hasBackgroundWhiteTer : String
+hasBackgroundWhiteTer =
+    "has-background-white-ter"
+
+
 {-| `hasBulletSeparator == "has-bullet-separator"`
 -}
 hasBulletSeparator : String
@@ -1884,6 +2081,20 @@ hasNavbarFixedTopTouch =
 hasShadow : String
 hasShadow =
     "has-shadow"
+
+
+{-| `hasSpacedNavbarFixedBottom == "has-spaced-navbar-fixed-bottom"`
+-}
+hasSpacedNavbarFixedBottom : String
+hasSpacedNavbarFixedBottom =
+    "has-spaced-navbar-fixed-bottom"
+
+
+{-| `hasSpacedNavbarFixedTop == "has-spaced-navbar-fixed-top"`
+-}
+hasSpacedNavbarFixedTop : String
+hasSpacedNavbarFixedTop =
+    "has-spaced-navbar-fixed-top"
 
 
 {-| `hasSucceedsSeparator == "has-succeeds-separator"`
@@ -2649,6 +2860,20 @@ is1by1 =
     "is-1by1"
 
 
+{-| `is1by2 == "is-1by2"`
+-}
+is1by2 : String
+is1by2 =
+    "is-1by2"
+
+
+{-| `is1by3 == "is-1by3"`
+-}
+is1by3 : String
+is1by3 =
+    "is-1by3"
+
+
 {-| `is2 == "is-2"`
 -}
 is2 : String
@@ -2712,6 +2937,13 @@ is2by1 =
     "is-2by1"
 
 
+{-| `is2by3 == "is-2by3"`
+-}
+is2by3 : String
+is2by3 =
+    "is-2by3"
+
+
 {-| `is3 == "is-3"`
 -}
 is3 : String
@@ -2768,11 +3000,32 @@ is32x32 =
     "is-32x32"
 
 
+{-| `is3by1 == "is-3by1"`
+-}
+is3by1 : String
+is3by1 =
+    "is-3by1"
+
+
 {-| `is3by2 == "is-3by2"`
 -}
 is3by2 : String
 is3by2 =
     "is-3by2"
+
+
+{-| `is3by4 == "is-3by4"`
+-}
+is3by4 : String
+is3by4 =
+    "is-3by4"
+
+
+{-| `is3by5 == "is-3by5"`
+-}
+is3by5 : String
+is3by5 =
+    "is-3by5"
 
 
 {-| `is4 == "is-4"`
@@ -2838,6 +3091,13 @@ is4by3 =
     "is-4by3"
 
 
+{-| `is4by5 == "is-4by5"`
+-}
+is4by5 : String
+is4by5 =
+    "is-4by5"
+
+
 {-| `is5 == "is-5"`
 -}
 is5 : String
@@ -2885,6 +3145,20 @@ is5Touch =
 is5Widescreen : String
 is5Widescreen =
     "is-5-widescreen"
+
+
+{-| `is5by3 == "is-5by3"`
+-}
+is5by3 : String
+is5by3 =
+    "is-5by3"
+
+
+{-| `is5by4 == "is-5by4"`
+-}
+is5by4 : String
+is5by4 =
+    "is-5by4"
 
 
 {-| `is6 == "is-6"`
@@ -3095,6 +3369,13 @@ is9Widescreen =
 is96x96 : String
 is96x96 =
     "is-96x96"
+
+
+{-| `is9by16 == "is-9by16"`
+-}
+is9by16 : String
+is9by16 =
+    "is-9by16"
 
 
 {-| `isActive == "is-active"`
@@ -6518,6 +6799,13 @@ subtitle =
 table : String
 table =
     "table"
+
+
+{-| `tableContainer == "table-container"`
+-}
+tableContainer : String
+tableContainer =
+    "table-container"
 
 
 {-| `tabs == "tabs"`

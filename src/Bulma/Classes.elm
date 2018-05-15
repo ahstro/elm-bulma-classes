@@ -1,4 +1,3 @@
-
 module Bulma.Classes
     exposing
         ( block
@@ -158,12 +157,6 @@ module Bulma.Classes
         , input
         , is0
         , is1
-        , is1Desktop
-        , is1Fullhd
-        , is1Mobile
-        , is1Tablet
-        , is1Touch
-        , is1Widescreen
         , is10
         , is10Desktop
         , is10Fullhd
@@ -179,48 +172,54 @@ module Bulma.Classes
         , is11Touch
         , is11Widescreen
         , is12
+        , is128x128
         , is12Desktop
         , is12Fullhd
         , is12Mobile
         , is12Tablet
         , is12Touch
         , is12Widescreen
-        , is128x128
         , is16by9
         , is16x16
+        , is1Desktop
+        , is1Fullhd
+        , is1Mobile
+        , is1Tablet
+        , is1Touch
+        , is1Widescreen
         , is1by1
         , is1by2
         , is1by3
         , is2
+        , is24x24
         , is2Desktop
         , is2Fullhd
         , is2Mobile
         , is2Tablet
         , is2Touch
         , is2Widescreen
-        , is24x24
         , is2by1
         , is2by3
         , is3
+        , is32x32
         , is3Desktop
         , is3Fullhd
         , is3Mobile
         , is3Tablet
         , is3Touch
         , is3Widescreen
-        , is32x32
         , is3by1
         , is3by2
         , is3by4
         , is3by5
         , is4
+        , is48x48
         , is4Desktop
         , is4Fullhd
         , is4Mobile
         , is4Tablet
         , is4Touch
         , is4Widescreen
-        , is48x48
         , is4by3
         , is4by5
         , is5
@@ -233,13 +232,13 @@ module Bulma.Classes
         , is5by3
         , is5by4
         , is6
+        , is64x64
         , is6Desktop
         , is6Fullhd
         , is6Mobile
         , is6Tablet
         , is6Touch
         , is6Widescreen
-        , is64x64
         , is7
         , is7Desktop
         , is7Fullhd
@@ -255,13 +254,13 @@ module Bulma.Classes
         , is8Touch
         , is8Widescreen
         , is9
+        , is96x96
         , is9Desktop
         , is9Fullhd
         , is9Mobile
         , is9Tablet
         , is9Touch
         , is9Widescreen
-        , is96x96
         , is9by16
         , isActive
         , isAncestor
@@ -418,12 +417,6 @@ module Bulma.Classes
         , isNarrowWidescreen
         , isNormal
         , isOffset1
-        , isOffset1Desktop
-        , isOffset1Fullhd
-        , isOffset1Mobile
-        , isOffset1Tablet
-        , isOffset1Touch
-        , isOffset1Widescreen
         , isOffset10
         , isOffset10Desktop
         , isOffset10Fullhd
@@ -445,6 +438,12 @@ module Bulma.Classes
         , isOffset12Tablet
         , isOffset12Touch
         , isOffset12Widescreen
+        , isOffset1Desktop
+        , isOffset1Fullhd
+        , isOffset1Mobile
+        , isOffset1Tablet
+        , isOffset1Touch
+        , isOffset1Widescreen
         , isOffset2
         , isOffset2Desktop
         , isOffset2Fullhd

@@ -3,7 +3,7 @@
     "name": "ahstro/elm-bulma-classes",
     "summary": "Bulma CSS classes",
     "license": "BSD-3-Clause",
-    "version": "2.1.0",
+    "version": "1.0.0",
     "exposed-modules": [
         "Bulma.Classes",
         "Bulma.Helpers"

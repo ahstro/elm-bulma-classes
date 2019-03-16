@@ -1,5 +1,8 @@
 module Bulma.Classes exposing
-    ( block
+    ( areLarge
+    , areMedium
+    , areSmall
+    , block
     , box
     , breadcrumb
     , button
@@ -64,8 +67,6 @@ module Bulma.Classes exposing
     , hasDropdown
     , hasDropdownUp
     , hasFixedSize
-    , hasIcon
-    , hasIconRight
     , hasIconsLeft
     , hasIconsRight
     , hasName
@@ -75,6 +76,7 @@ module Bulma.Classes exposing
     , hasNavbarFixedTop
     , hasNavbarFixedTopDesktop
     , hasNavbarFixedTopTouch
+    , hasRatio
     , hasShadow
     , hasSpacedNavbarFixedBottom
     , hasSpacedNavbarFixedTop
@@ -155,13 +157,25 @@ module Bulma.Classes exposing
     , image
     , input
     , is0
+    , is0Desktop
+    , is0DesktopOnly
+    , is0Fullhd
+    , is0Mobile
+    , is0Tablet
+    , is0TabletOnly
+    , is0Touch
+    , is0Widescreen
+    , is0WidescreenOnly
     , is1
     , is1Desktop
+    , is1DesktopOnly
     , is1Fullhd
     , is1Mobile
     , is1Tablet
+    , is1TabletOnly
     , is1Touch
     , is1Widescreen
+    , is1WidescreenOnly
     , is10
     , is10Desktop
     , is10Fullhd
@@ -191,21 +205,27 @@ module Bulma.Classes exposing
     , is1by3
     , is2
     , is2Desktop
+    , is2DesktopOnly
     , is2Fullhd
     , is2Mobile
     , is2Tablet
+    , is2TabletOnly
     , is2Touch
     , is2Widescreen
+    , is2WidescreenOnly
     , is24x24
     , is2by1
     , is2by3
     , is3
     , is3Desktop
+    , is3DesktopOnly
     , is3Fullhd
     , is3Mobile
     , is3Tablet
+    , is3TabletOnly
     , is3Touch
     , is3Widescreen
+    , is3WidescreenOnly
     , is32x32
     , is3by1
     , is3by2
@@ -213,45 +233,60 @@ module Bulma.Classes exposing
     , is3by5
     , is4
     , is4Desktop
+    , is4DesktopOnly
     , is4Fullhd
     , is4Mobile
     , is4Tablet
+    , is4TabletOnly
     , is4Touch
     , is4Widescreen
+    , is4WidescreenOnly
     , is48x48
     , is4by3
     , is4by5
     , is5
     , is5Desktop
+    , is5DesktopOnly
     , is5Fullhd
     , is5Mobile
     , is5Tablet
+    , is5TabletOnly
     , is5Touch
     , is5Widescreen
+    , is5WidescreenOnly
     , is5by3
     , is5by4
     , is6
     , is6Desktop
+    , is6DesktopOnly
     , is6Fullhd
     , is6Mobile
     , is6Tablet
+    , is6TabletOnly
     , is6Touch
     , is6Widescreen
+    , is6WidescreenOnly
     , is64x64
     , is7
     , is7Desktop
+    , is7DesktopOnly
     , is7Fullhd
     , is7Mobile
     , is7Tablet
+    , is7TabletOnly
     , is7Touch
     , is7Widescreen
+    , is7WidescreenOnly
     , is8
     , is8Desktop
+    , is8DesktopOnly
     , is8Fullhd
     , is8Mobile
     , is8Tablet
+    , is8TabletOnly
     , is8Touch
     , is8Widescreen
+    , is8WidescreenOnly
     , is9
     , is9Desktop
     , is9Fullhd
@@ -263,6 +298,7 @@ module Bulma.Classes exposing
     , is9by16
     , isActive
     , isAncestor
+    , isArrowless
     , isBlack
     , isBlock
     , isBlockDesktop
@@ -291,6 +327,11 @@ module Bulma.Classes exposing
     , isDisabled
     , isEmpty
     , isExpanded
+    , isFamilyCode
+    , isFamilyMonospace
+    , isFamilyPrimary
+    , isFamilySansSerif
+    , isFamilySecondary
     , isFixedBottom
     , isFixedBottomDesktop
     , isFixedBottomTouch
@@ -326,6 +367,7 @@ module Bulma.Classes exposing
     , isFullWidescreen
     , isFullhd
     , isFullheight
+    , isFullheightWithNavbar
     , isFullwidth
     , isGapless
     , isGrouped
@@ -401,6 +443,8 @@ module Bulma.Classes exposing
     , isLight
     , isLink
     , isLoading
+    , isLowerAlpha
+    , isLowerRoman
     , isLowercase
     , isMarginless
     , isMedium
@@ -647,6 +691,7 @@ module Bulma.Classes exposing
     , isSmall
     , isSpaced
     , isSquare
+    , isSrOnly
     , isStatic
     , isStriped
     , isSuccess
@@ -685,6 +730,8 @@ module Bulma.Classes exposing
     , isTwoThirdsWidescreen
     , isUnselectable
     , isUp
+    , isUpperAlpha
+    , isUpperRoman
     , isUppercase
     , isVariable
     , isVcentered
@@ -698,6 +745,8 @@ module Bulma.Classes exposing
     , levelItem
     , levelLeft
     , levelRight
+    , list
+    , listItem
     , loader
     , media
     , mediaContent
@@ -780,6 +829,9 @@ Example usage:
 
 # Classes
 
+@docs areLarge
+@docs areMedium
+@docs areSmall
 @docs block
 @docs box
 @docs breadcrumb
@@ -845,8 +897,6 @@ Example usage:
 @docs hasDropdown
 @docs hasDropdownUp
 @docs hasFixedSize
-@docs hasIcon
-@docs hasIconRight
 @docs hasIconsLeft
 @docs hasIconsRight
 @docs hasName
@@ -856,6 +906,7 @@ Example usage:
 @docs hasNavbarFixedTop
 @docs hasNavbarFixedTopDesktop
 @docs hasNavbarFixedTopTouch
+@docs hasRatio
 @docs hasShadow
 @docs hasSpacedNavbarFixedBottom
 @docs hasSpacedNavbarFixedTop
@@ -936,13 +987,25 @@ Example usage:
 @docs image
 @docs input
 @docs is0
+@docs is0Desktop
+@docs is0DesktopOnly
+@docs is0Fullhd
+@docs is0Mobile
+@docs is0Tablet
+@docs is0TabletOnly
+@docs is0Touch
+@docs is0Widescreen
+@docs is0WidescreenOnly
 @docs is1
 @docs is1Desktop
+@docs is1DesktopOnly
 @docs is1Fullhd
 @docs is1Mobile
 @docs is1Tablet
+@docs is1TabletOnly
 @docs is1Touch
 @docs is1Widescreen
+@docs is1WidescreenOnly
 @docs is10
 @docs is10Desktop
 @docs is10Fullhd
@@ -972,21 +1035,27 @@ Example usage:
 @docs is1by3
 @docs is2
 @docs is2Desktop
+@docs is2DesktopOnly
 @docs is2Fullhd
 @docs is2Mobile
 @docs is2Tablet
+@docs is2TabletOnly
 @docs is2Touch
 @docs is2Widescreen
+@docs is2WidescreenOnly
 @docs is24x24
 @docs is2by1
 @docs is2by3
 @docs is3
 @docs is3Desktop
+@docs is3DesktopOnly
 @docs is3Fullhd
 @docs is3Mobile
 @docs is3Tablet
+@docs is3TabletOnly
 @docs is3Touch
 @docs is3Widescreen
+@docs is3WidescreenOnly
 @docs is32x32
 @docs is3by1
 @docs is3by2
@@ -994,45 +1063,60 @@ Example usage:
 @docs is3by5
 @docs is4
 @docs is4Desktop
+@docs is4DesktopOnly
 @docs is4Fullhd
 @docs is4Mobile
 @docs is4Tablet
+@docs is4TabletOnly
 @docs is4Touch
 @docs is4Widescreen
+@docs is4WidescreenOnly
 @docs is48x48
 @docs is4by3
 @docs is4by5
 @docs is5
 @docs is5Desktop
+@docs is5DesktopOnly
 @docs is5Fullhd
 @docs is5Mobile
 @docs is5Tablet
+@docs is5TabletOnly
 @docs is5Touch
 @docs is5Widescreen
+@docs is5WidescreenOnly
 @docs is5by3
 @docs is5by4
 @docs is6
 @docs is6Desktop
+@docs is6DesktopOnly
 @docs is6Fullhd
 @docs is6Mobile
 @docs is6Tablet
+@docs is6TabletOnly
 @docs is6Touch
 @docs is6Widescreen
+@docs is6WidescreenOnly
 @docs is64x64
 @docs is7
 @docs is7Desktop
+@docs is7DesktopOnly
 @docs is7Fullhd
 @docs is7Mobile
 @docs is7Tablet
+@docs is7TabletOnly
 @docs is7Touch
 @docs is7Widescreen
+@docs is7WidescreenOnly
 @docs is8
 @docs is8Desktop
+@docs is8DesktopOnly
 @docs is8Fullhd
 @docs is8Mobile
 @docs is8Tablet
+@docs is8TabletOnly
 @docs is8Touch
 @docs is8Widescreen
+@docs is8WidescreenOnly
 @docs is9
 @docs is9Desktop
 @docs is9Fullhd
@@ -1044,6 +1128,7 @@ Example usage:
 @docs is9by16
 @docs isActive
 @docs isAncestor
+@docs isArrowless
 @docs isBlack
 @docs isBlock
 @docs isBlockDesktop
@@ -1072,6 +1157,11 @@ Example usage:
 @docs isDisabled
 @docs isEmpty
 @docs isExpanded
+@docs isFamilyCode
+@docs isFamilyMonospace
+@docs isFamilyPrimary
+@docs isFamilySansSerif
+@docs isFamilySecondary
 @docs isFixedBottom
 @docs isFixedBottomDesktop
 @docs isFixedBottomTouch
@@ -1107,6 +1197,7 @@ Example usage:
 @docs isFullWidescreen
 @docs isFullhd
 @docs isFullheight
+@docs isFullheightWithNavbar
 @docs isFullwidth
 @docs isGapless
 @docs isGrouped
@@ -1182,6 +1273,8 @@ Example usage:
 @docs isLight
 @docs isLink
 @docs isLoading
+@docs isLowerAlpha
+@docs isLowerRoman
 @docs isLowercase
 @docs isMarginless
 @docs isMedium
@@ -1428,6 +1521,7 @@ Example usage:
 @docs isSmall
 @docs isSpaced
 @docs isSquare
+@docs isSrOnly
 @docs isStatic
 @docs isStriped
 @docs isSuccess
@@ -1466,6 +1560,8 @@ Example usage:
 @docs isTwoThirdsWidescreen
 @docs isUnselectable
 @docs isUp
+@docs isUpperAlpha
+@docs isUpperRoman
 @docs isUppercase
 @docs isVariable
 @docs isVcentered
@@ -1479,6 +1575,8 @@ Example usage:
 @docs levelItem
 @docs levelLeft
 @docs levelRight
+@docs list
+@docs listItem
 @docs loader
 @docs media
 @docs mediaContent
@@ -1540,6 +1638,27 @@ Example usage:
 @docs title
 
 -}
+
+
+{-| `areLarge == "are-large"`
+-}
+areLarge : String
+areLarge =
+    "are-large"
+
+
+{-| `areMedium == "are-medium"`
+-}
+areMedium : String
+areMedium =
+    "are-medium"
+
+
+{-| `areSmall == "are-small"`
+-}
+areSmall : String
+areSmall =
+    "are-small"
 
 
 {-| `block == "block"`
@@ -1997,20 +2116,6 @@ hasFixedSize =
     "has-fixed-size"
 
 
-{-| `hasIcon == "has-icon"`
--}
-hasIcon : String
-hasIcon =
-    "has-icon"
-
-
-{-| `hasIconRight == "has-icon-right"`
--}
-hasIconRight : String
-hasIconRight =
-    "has-icon-right"
-
-
 {-| `hasIconsLeft == "has-icons-left"`
 -}
 hasIconsLeft : String
@@ -2072,6 +2177,13 @@ hasNavbarFixedTopDesktop =
 hasNavbarFixedTopTouch : String
 hasNavbarFixedTopTouch =
     "has-navbar-fixed-top-touch"
+
+
+{-| `hasRatio == "has-ratio"`
+-}
+hasRatio : String
+hasRatio =
+    "has-ratio"
 
 
 {-| `hasShadow == "has-shadow"`
@@ -2634,6 +2746,69 @@ is0 =
     "is-0"
 
 
+{-| `is0Desktop == "is-0-desktop"`
+-}
+is0Desktop : String
+is0Desktop =
+    "is-0-desktop"
+
+
+{-| `is0DesktopOnly == "is-0-desktop-only"`
+-}
+is0DesktopOnly : String
+is0DesktopOnly =
+    "is-0-desktop-only"
+
+
+{-| `is0Fullhd == "is-0-fullhd"`
+-}
+is0Fullhd : String
+is0Fullhd =
+    "is-0-fullhd"
+
+
+{-| `is0Mobile == "is-0-mobile"`
+-}
+is0Mobile : String
+is0Mobile =
+    "is-0-mobile"
+
+
+{-| `is0Tablet == "is-0-tablet"`
+-}
+is0Tablet : String
+is0Tablet =
+    "is-0-tablet"
+
+
+{-| `is0TabletOnly == "is-0-tablet-only"`
+-}
+is0TabletOnly : String
+is0TabletOnly =
+    "is-0-tablet-only"
+
+
+{-| `is0Touch == "is-0-touch"`
+-}
+is0Touch : String
+is0Touch =
+    "is-0-touch"
+
+
+{-| `is0Widescreen == "is-0-widescreen"`
+-}
+is0Widescreen : String
+is0Widescreen =
+    "is-0-widescreen"
+
+
+{-| `is0WidescreenOnly == "is-0-widescreen-only"`
+-}
+is0WidescreenOnly : String
+is0WidescreenOnly =
+    "is-0-widescreen-only"
+
+
 {-| `is1 == "is-1"`
 -}
 is1 : String
@@ -2646,6 +2821,13 @@ is1 =
 is1Desktop : String
 is1Desktop =
     "is-1-desktop"
+
+
+{-| `is1DesktopOnly == "is-1-desktop-only"`
+-}
+is1DesktopOnly : String
+is1DesktopOnly =
+    "is-1-desktop-only"
 
 
 {-| `is1Fullhd == "is-1-fullhd"`
@@ -2669,6 +2851,13 @@ is1Tablet =
     "is-1-tablet"
 
 
+{-| `is1TabletOnly == "is-1-tablet-only"`
+-}
+is1TabletOnly : String
+is1TabletOnly =
+    "is-1-tablet-only"
+
+
 {-| `is1Touch == "is-1-touch"`
 -}
 is1Touch : String
@@ -2681,6 +2870,13 @@ is1Touch =
 is1Widescreen : String
 is1Widescreen =
     "is-1-widescreen"
+
+
+{-| `is1WidescreenOnly == "is-1-widescreen-only"`
+-}
+is1WidescreenOnly : String
+is1WidescreenOnly =
+    "is-1-widescreen-only"
 
 
 {-| `is10 == "is-10"`
@@ -2886,6 +3082,13 @@ is2Desktop =
     "is-2-desktop"
 
 
+{-| `is2DesktopOnly == "is-2-desktop-only"`
+-}
+is2DesktopOnly : String
+is2DesktopOnly =
+    "is-2-desktop-only"
+
+
 {-| `is2Fullhd == "is-2-fullhd"`
 -}
 is2Fullhd : String
@@ -2907,6 +3110,13 @@ is2Tablet =
     "is-2-tablet"
 
 
+{-| `is2TabletOnly == "is-2-tablet-only"`
+-}
+is2TabletOnly : String
+is2TabletOnly =
+    "is-2-tablet-only"
+
+
 {-| `is2Touch == "is-2-touch"`
 -}
 is2Touch : String
@@ -2919,6 +3129,13 @@ is2Touch =
 is2Widescreen : String
 is2Widescreen =
     "is-2-widescreen"
+
+
+{-| `is2WidescreenOnly == "is-2-widescreen-only"`
+-}
+is2WidescreenOnly : String
+is2WidescreenOnly =
+    "is-2-widescreen-only"
 
 
 {-| `is24x24 == "is-24x24"`
@@ -2956,6 +3173,13 @@ is3Desktop =
     "is-3-desktop"
 
 
+{-| `is3DesktopOnly == "is-3-desktop-only"`
+-}
+is3DesktopOnly : String
+is3DesktopOnly =
+    "is-3-desktop-only"
+
+
 {-| `is3Fullhd == "is-3-fullhd"`
 -}
 is3Fullhd : String
@@ -2977,6 +3201,13 @@ is3Tablet =
     "is-3-tablet"
 
 
+{-| `is3TabletOnly == "is-3-tablet-only"`
+-}
+is3TabletOnly : String
+is3TabletOnly =
+    "is-3-tablet-only"
+
+
 {-| `is3Touch == "is-3-touch"`
 -}
 is3Touch : String
@@ -2989,6 +3220,13 @@ is3Touch =
 is3Widescreen : String
 is3Widescreen =
     "is-3-widescreen"
+
+
+{-| `is3WidescreenOnly == "is-3-widescreen-only"`
+-}
+is3WidescreenOnly : String
+is3WidescreenOnly =
+    "is-3-widescreen-only"
 
 
 {-| `is32x32 == "is-32x32"`
@@ -3040,6 +3278,13 @@ is4Desktop =
     "is-4-desktop"
 
 
+{-| `is4DesktopOnly == "is-4-desktop-only"`
+-}
+is4DesktopOnly : String
+is4DesktopOnly =
+    "is-4-desktop-only"
+
+
 {-| `is4Fullhd == "is-4-fullhd"`
 -}
 is4Fullhd : String
@@ -3061,6 +3306,13 @@ is4Tablet =
     "is-4-tablet"
 
 
+{-| `is4TabletOnly == "is-4-tablet-only"`
+-}
+is4TabletOnly : String
+is4TabletOnly =
+    "is-4-tablet-only"
+
+
 {-| `is4Touch == "is-4-touch"`
 -}
 is4Touch : String
@@ -3073,6 +3325,13 @@ is4Touch =
 is4Widescreen : String
 is4Widescreen =
     "is-4-widescreen"
+
+
+{-| `is4WidescreenOnly == "is-4-widescreen-only"`
+-}
+is4WidescreenOnly : String
+is4WidescreenOnly =
+    "is-4-widescreen-only"
 
 
 {-| `is48x48 == "is-48x48"`
@@ -3110,6 +3369,13 @@ is5Desktop =
     "is-5-desktop"
 
 
+{-| `is5DesktopOnly == "is-5-desktop-only"`
+-}
+is5DesktopOnly : String
+is5DesktopOnly =
+    "is-5-desktop-only"
+
+
 {-| `is5Fullhd == "is-5-fullhd"`
 -}
 is5Fullhd : String
@@ -3131,6 +3397,13 @@ is5Tablet =
     "is-5-tablet"
 
 
+{-| `is5TabletOnly == "is-5-tablet-only"`
+-}
+is5TabletOnly : String
+is5TabletOnly =
+    "is-5-tablet-only"
+
+
 {-| `is5Touch == "is-5-touch"`
 -}
 is5Touch : String
@@ -3143,6 +3416,13 @@ is5Touch =
 is5Widescreen : String
 is5Widescreen =
     "is-5-widescreen"
+
+
+{-| `is5WidescreenOnly == "is-5-widescreen-only"`
+-}
+is5WidescreenOnly : String
+is5WidescreenOnly =
+    "is-5-widescreen-only"
 
 
 {-| `is5by3 == "is-5by3"`
@@ -3173,6 +3453,13 @@ is6Desktop =
     "is-6-desktop"
 
 
+{-| `is6DesktopOnly == "is-6-desktop-only"`
+-}
+is6DesktopOnly : String
+is6DesktopOnly =
+    "is-6-desktop-only"
+
+
 {-| `is6Fullhd == "is-6-fullhd"`
 -}
 is6Fullhd : String
@@ -3194,6 +3481,13 @@ is6Tablet =
     "is-6-tablet"
 
 
+{-| `is6TabletOnly == "is-6-tablet-only"`
+-}
+is6TabletOnly : String
+is6TabletOnly =
+    "is-6-tablet-only"
+
+
 {-| `is6Touch == "is-6-touch"`
 -}
 is6Touch : String
@@ -3206,6 +3500,13 @@ is6Touch =
 is6Widescreen : String
 is6Widescreen =
     "is-6-widescreen"
+
+
+{-| `is6WidescreenOnly == "is-6-widescreen-only"`
+-}
+is6WidescreenOnly : String
+is6WidescreenOnly =
+    "is-6-widescreen-only"
 
 
 {-| `is64x64 == "is-64x64"`
@@ -3229,6 +3530,13 @@ is7Desktop =
     "is-7-desktop"
 
 
+{-| `is7DesktopOnly == "is-7-desktop-only"`
+-}
+is7DesktopOnly : String
+is7DesktopOnly =
+    "is-7-desktop-only"
+
+
 {-| `is7Fullhd == "is-7-fullhd"`
 -}
 is7Fullhd : String
@@ -3250,6 +3558,13 @@ is7Tablet =
     "is-7-tablet"
 
 
+{-| `is7TabletOnly == "is-7-tablet-only"`
+-}
+is7TabletOnly : String
+is7TabletOnly =
+    "is-7-tablet-only"
+
+
 {-| `is7Touch == "is-7-touch"`
 -}
 is7Touch : String
@@ -3264,6 +3579,13 @@ is7Widescreen =
     "is-7-widescreen"
 
 
+{-| `is7WidescreenOnly == "is-7-widescreen-only"`
+-}
+is7WidescreenOnly : String
+is7WidescreenOnly =
+    "is-7-widescreen-only"
+
+
 {-| `is8 == "is-8"`
 -}
 is8 : String
@@ -3276,6 +3598,13 @@ is8 =
 is8Desktop : String
 is8Desktop =
     "is-8-desktop"
+
+
+{-| `is8DesktopOnly == "is-8-desktop-only"`
+-}
+is8DesktopOnly : String
+is8DesktopOnly =
+    "is-8-desktop-only"
 
 
 {-| `is8Fullhd == "is-8-fullhd"`
@@ -3299,6 +3628,13 @@ is8Tablet =
     "is-8-tablet"
 
 
+{-| `is8TabletOnly == "is-8-tablet-only"`
+-}
+is8TabletOnly : String
+is8TabletOnly =
+    "is-8-tablet-only"
+
+
 {-| `is8Touch == "is-8-touch"`
 -}
 is8Touch : String
@@ -3311,6 +3647,13 @@ is8Touch =
 is8Widescreen : String
 is8Widescreen =
     "is-8-widescreen"
+
+
+{-| `is8WidescreenOnly == "is-8-widescreen-only"`
+-}
+is8WidescreenOnly : String
+is8WidescreenOnly =
+    "is-8-widescreen-only"
 
 
 {-| `is9 == "is-9"`
@@ -3388,6 +3731,13 @@ isActive =
 isAncestor : String
 isAncestor =
     "is-ancestor"
+
+
+{-| `isArrowless == "is-arrowless"`
+-}
+isArrowless : String
+isArrowless =
+    "is-arrowless"
 
 
 {-| `isBlack == "is-black"`
@@ -3584,6 +3934,41 @@ isEmpty =
 isExpanded : String
 isExpanded =
     "is-expanded"
+
+
+{-| `isFamilyCode == "is-family-code"`
+-}
+isFamilyCode : String
+isFamilyCode =
+    "is-family-code"
+
+
+{-| `isFamilyMonospace == "is-family-monospace"`
+-}
+isFamilyMonospace : String
+isFamilyMonospace =
+    "is-family-monospace"
+
+
+{-| `isFamilyPrimary == "is-family-primary"`
+-}
+isFamilyPrimary : String
+isFamilyPrimary =
+    "is-family-primary"
+
+
+{-| `isFamilySansSerif == "is-family-sans-serif"`
+-}
+isFamilySansSerif : String
+isFamilySansSerif =
+    "is-family-sans-serif"
+
+
+{-| `isFamilySecondary == "is-family-secondary"`
+-}
+isFamilySecondary : String
+isFamilySecondary =
+    "is-family-secondary"
 
 
 {-| `isFixedBottom == "is-fixed-bottom"`
@@ -3829,6 +4214,13 @@ isFullhd =
 isFullheight : String
 isFullheight =
     "is-fullheight"
+
+
+{-| `isFullheightWithNavbar == "is-fullheight-with-navbar"`
+-}
+isFullheightWithNavbar : String
+isFullheightWithNavbar =
+    "is-fullheight-with-navbar"
 
 
 {-| `isFullwidth == "is-fullwidth"`
@@ -4354,6 +4746,20 @@ isLink =
 isLoading : String
 isLoading =
     "is-loading"
+
+
+{-| `isLowerAlpha == "is-lower-alpha"`
+-}
+isLowerAlpha : String
+isLowerAlpha =
+    "is-lower-alpha"
+
+
+{-| `isLowerRoman == "is-lower-roman"`
+-}
+isLowerRoman : String
+isLowerRoman =
+    "is-lower-roman"
 
 
 {-| `isLowercase == "is-lowercase"`
@@ -6078,6 +6484,13 @@ isSquare =
     "is-square"
 
 
+{-| `isSrOnly == "is-sr-only"`
+-}
+isSrOnly : String
+isSrOnly =
+    "is-sr-only"
+
+
 {-| `isStatic == "is-static"`
 -}
 isStatic : String
@@ -6344,6 +6757,20 @@ isUp =
     "is-up"
 
 
+{-| `isUpperAlpha == "is-upper-alpha"`
+-}
+isUpperAlpha : String
+isUpperAlpha =
+    "is-upper-alpha"
+
+
+{-| `isUpperRoman == "is-upper-roman"`
+-}
+isUpperRoman : String
+isUpperRoman =
+    "is-upper-roman"
+
+
 {-| `isUppercase == "is-uppercase"`
 -}
 isUppercase : String
@@ -6433,6 +6860,20 @@ levelLeft =
 levelRight : String
 levelRight =
     "level-right"
+
+
+{-| `list == "list"`
+-}
+list : String
+list =
+    "list"
+
+
+{-| `listItem == "list-item"`
+-}
+listItem : String
+listItem =
+    "list-item"
 
 
 {-| `loader == "loader"`

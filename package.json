@@ -3,7 +3,7 @@
     "generate-classes": "node generate.js"
   },
   "devDependencies": {
-    "css": "^2.2.1",
-    "node-fetch": "^2.1.2"
+    "css": "^2.2.4",
+    "node-fetch": "^2.3.0"
   }
 }

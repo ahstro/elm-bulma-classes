@@ -139,6 +139,7 @@ module Bulma.Classes exposing
     , hasTextWarning
     , hasTextWeightBold
     , hasTextWeightLight
+    , hasTextWeightMedium
     , hasTextWeightNormal
     , hasTextWeightSemibold
     , hasTextWhite
@@ -459,6 +460,13 @@ module Bulma.Classes exposing
     , isNarrowTouch
     , isNarrowWidescreen
     , isNormal
+    , isOffset0
+    , isOffset0Desktop
+    , isOffset0Fullhd
+    , isOffset0Mobile
+    , isOffset0Tablet
+    , isOffset0Touch
+    , isOffset0Widescreen
     , isOffset1
     , isOffset1Desktop
     , isOffset1Fullhd
@@ -635,6 +643,7 @@ module Bulma.Classes exposing
     , isPulledLeft
     , isPulledRight
     , isRadiusless
+    , isRelative
     , isRight
     , isRounded
     , isSelected
@@ -969,6 +978,7 @@ Example usage:
 @docs hasTextWarning
 @docs hasTextWeightBold
 @docs hasTextWeightLight
+@docs hasTextWeightMedium
 @docs hasTextWeightNormal
 @docs hasTextWeightSemibold
 @docs hasTextWhite
@@ -1289,6 +1299,13 @@ Example usage:
 @docs isNarrowTouch
 @docs isNarrowWidescreen
 @docs isNormal
+@docs isOffset0
+@docs isOffset0Desktop
+@docs isOffset0Fullhd
+@docs isOffset0Mobile
+@docs isOffset0Tablet
+@docs isOffset0Touch
+@docs isOffset0Widescreen
 @docs isOffset1
 @docs isOffset1Desktop
 @docs isOffset1Fullhd
@@ -1465,6 +1482,7 @@ Example usage:
 @docs isPulledLeft
 @docs isPulledRight
 @docs isRadiusless
+@docs isRelative
 @docs isRight
 @docs isRounded
 @docs isSelected
@@ -2618,6 +2636,13 @@ hasTextWeightBold =
 hasTextWeightLight : String
 hasTextWeightLight =
     "has-text-weight-light"
+
+
+{-| `hasTextWeightMedium == "has-text-weight-medium"`
+-}
+hasTextWeightMedium : String
+hasTextWeightMedium =
+    "has-text-weight-medium"
 
 
 {-| `hasTextWeightNormal == "has-text-weight-normal"`
@@ -4860,6 +4885,55 @@ isNormal =
     "is-normal"
 
 
+{-| `isOffset0 == "is-offset-0"`
+-}
+isOffset0 : String
+isOffset0 =
+    "is-offset-0"
+
+
+{-| `isOffset0Desktop == "is-offset-0-desktop"`
+-}
+isOffset0Desktop : String
+isOffset0Desktop =
+    "is-offset-0-desktop"
+
+
+{-| `isOffset0Fullhd == "is-offset-0-fullhd"`
+-}
+isOffset0Fullhd : String
+isOffset0Fullhd =
+    "is-offset-0-fullhd"
+
+
+{-| `isOffset0Mobile == "is-offset-0-mobile"`
+-}
+isOffset0Mobile : String
+isOffset0Mobile =
+    "is-offset-0-mobile"
+
+
+{-| `isOffset0Tablet == "is-offset-0-tablet"`
+-}
+isOffset0Tablet : String
+isOffset0Tablet =
+    "is-offset-0-tablet"
+
+
+{-| `isOffset0Touch == "is-offset-0-touch"`
+-}
+isOffset0Touch : String
+isOffset0Touch =
+    "is-offset-0-touch"
+
+
+{-| `isOffset0Widescreen == "is-offset-0-widescreen"`
+-}
+isOffset0Widescreen : String
+isOffset0Widescreen =
+    "is-offset-0-widescreen"
+
+
 {-| `isOffset1 == "is-offset-1"`
 -}
 isOffset1 : String
@@ -6090,6 +6164,13 @@ isPulledRight =
 isRadiusless : String
 isRadiusless =
     "is-radiusless"
+
+
+{-| `isRelative == "is-relative"`
+-}
+isRelative : String
+isRelative =
+    "is-relative"
 
 
 {-| `isRight == "is-right"`

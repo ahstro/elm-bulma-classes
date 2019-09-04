@@ -23,6 +23,21 @@ view =
         ]
 ```
 
+### N.B.
+
+As it is structured, by the time that your Elm code has loaded, the browser has already read into the `<head>` tag, so it's too late to edit or maybe insert something into this section.
+
+For this reason, to use this package you have to manually import the link of the Bulma's CDN. 
+
+Simply run `elm make` to produce your `filename.html` and then add your CDN link like this.
+
+```html
+<head>
+  <meta charset="UTF-8">
+	<title>Main</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+</head>
+```
 
 ## Why?
 "Why? There's already a bunch of Bulma libraries" you might say, and that is a valid question.

@@ -54,11 +54,9 @@ const camelCase = x => x.replace(/-(\w)/g, (_, y) => y.toUpperCase());
 
 const createElmModule = classes => {
   const camelCased = classes.map(camelCase);
-  return `
-module Bulma.Classes
-    exposing
-        ( ${camelCased.join("\n        , ")}
-        )
+  return `module Bulma.Classes exposing
+    ( ${camelCased.join("\n    , ")}
+    )
 
 {-| A module containing all [Bulma](https://bulma.io) classes at top
 level, putting the burden of not making typos on the compiler.

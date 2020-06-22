@@ -47,6 +47,8 @@ module Bulma.Classes exposing
     , hasBackgroundBlackBis
     , hasBackgroundBlackTer
     , hasBackgroundDanger
+    , hasBackgroundDangerDark
+    , hasBackgroundDangerLight
     , hasBackgroundDark
     , hasBackgroundGrey
     , hasBackgroundGreyDark
@@ -54,11 +56,21 @@ module Bulma.Classes exposing
     , hasBackgroundGreyLight
     , hasBackgroundGreyLighter
     , hasBackgroundInfo
+    , hasBackgroundInfoDark
+    , hasBackgroundInfoLight
     , hasBackgroundLight
     , hasBackgroundLink
+    , hasBackgroundLinkDark
+    , hasBackgroundLinkLight
     , hasBackgroundPrimary
+    , hasBackgroundPrimaryDark
+    , hasBackgroundPrimaryLight
     , hasBackgroundSuccess
+    , hasBackgroundSuccessDark
+    , hasBackgroundSuccessLight
     , hasBackgroundWarning
+    , hasBackgroundWarningDark
+    , hasBackgroundWarningLight
     , hasBackgroundWhite
     , hasBackgroundWhiteBis
     , hasBackgroundWhiteTer
@@ -95,6 +107,8 @@ module Bulma.Classes exposing
     , hasTextCenteredWidescreen
     , hasTextCenteredWidescreenOnly
     , hasTextDanger
+    , hasTextDangerDark
+    , hasTextDangerLight
     , hasTextDark
     , hasTextGrey
     , hasTextGreyDark
@@ -102,6 +116,8 @@ module Bulma.Classes exposing
     , hasTextGreyLight
     , hasTextGreyLighter
     , hasTextInfo
+    , hasTextInfoDark
+    , hasTextInfoLight
     , hasTextJustified
     , hasTextJustifiedDesktop
     , hasTextJustifiedDesktopOnly
@@ -124,7 +140,11 @@ module Bulma.Classes exposing
     , hasTextLeftWidescreenOnly
     , hasTextLight
     , hasTextLink
+    , hasTextLinkDark
+    , hasTextLinkLight
     , hasTextPrimary
+    , hasTextPrimaryDark
+    , hasTextPrimaryLight
     , hasTextRight
     , hasTextRightDesktop
     , hasTextRightDesktopOnly
@@ -136,7 +156,11 @@ module Bulma.Classes exposing
     , hasTextRightWidescreen
     , hasTextRightWidescreenOnly
     , hasTextSuccess
+    , hasTextSuccessDark
+    , hasTextSuccessLight
     , hasTextWarning
+    , hasTextWarningDark
+    , hasTextWarningLight
     , hasTextWeightBold
     , hasTextWeightLight
     , hasTextWeightMedium
@@ -754,9 +778,14 @@ module Bulma.Classes exposing
     , levelItem
     , levelLeft
     , levelRight
-    , list
-    , listItem
     , loader
+    , mb0
+    , mb1
+    , mb2
+    , mb3
+    , mb4
+    , mb5
+    , mb6
     , media
     , mediaContent
     , mediaLeft
@@ -767,6 +796,13 @@ module Bulma.Classes exposing
     , message
     , messageBody
     , messageHeader
+    , ml0
+    , ml1
+    , ml2
+    , ml3
+    , ml4
+    , ml5
+    , ml6
     , modal
     , modalBackground
     , modalCard
@@ -776,6 +812,34 @@ module Bulma.Classes exposing
     , modalCardTitle
     , modalClose
     , modalContent
+    , mr0
+    , mr1
+    , mr2
+    , mr3
+    , mr4
+    , mr5
+    , mr6
+    , mt0
+    , mt1
+    , mt2
+    , mt3
+    , mt4
+    , mt5
+    , mt6
+    , mx0
+    , mx1
+    , mx2
+    , mx3
+    , mx4
+    , mx5
+    , mx6
+    , my0
+    , my1
+    , my2
+    , my3
+    , my4
+    , my5
+    , my6
     , navbar
     , navbarBrand
     , navbarBurger
@@ -802,7 +866,49 @@ module Bulma.Classes exposing
     , panelIcon
     , panelList
     , panelTabs
+    , pb0
+    , pb1
+    , pb2
+    , pb3
+    , pb4
+    , pb5
+    , pb6
+    , pl0
+    , pl1
+    , pl2
+    , pl3
+    , pl4
+    , pl5
+    , pl6
+    , pr0
+    , pr1
+    , pr2
+    , pr3
+    , pr4
+    , pr5
+    , pr6
     , progress
+    , pt0
+    , pt1
+    , pt2
+    , pt3
+    , pt4
+    , pt5
+    , pt6
+    , px0
+    , px1
+    , px2
+    , px3
+    , px4
+    , px5
+    , px6
+    , py0
+    , py1
+    , py2
+    , py3
+    , py4
+    , py5
+    , py6
     , radio
     , section
     , select
@@ -886,6 +992,8 @@ Example usage:
 @docs hasBackgroundBlackBis
 @docs hasBackgroundBlackTer
 @docs hasBackgroundDanger
+@docs hasBackgroundDangerDark
+@docs hasBackgroundDangerLight
 @docs hasBackgroundDark
 @docs hasBackgroundGrey
 @docs hasBackgroundGreyDark
@@ -893,11 +1001,21 @@ Example usage:
 @docs hasBackgroundGreyLight
 @docs hasBackgroundGreyLighter
 @docs hasBackgroundInfo
+@docs hasBackgroundInfoDark
+@docs hasBackgroundInfoLight
 @docs hasBackgroundLight
 @docs hasBackgroundLink
+@docs hasBackgroundLinkDark
+@docs hasBackgroundLinkLight
 @docs hasBackgroundPrimary
+@docs hasBackgroundPrimaryDark
+@docs hasBackgroundPrimaryLight
 @docs hasBackgroundSuccess
+@docs hasBackgroundSuccessDark
+@docs hasBackgroundSuccessLight
 @docs hasBackgroundWarning
+@docs hasBackgroundWarningDark
+@docs hasBackgroundWarningLight
 @docs hasBackgroundWhite
 @docs hasBackgroundWhiteBis
 @docs hasBackgroundWhiteTer
@@ -934,6 +1052,8 @@ Example usage:
 @docs hasTextCenteredWidescreen
 @docs hasTextCenteredWidescreenOnly
 @docs hasTextDanger
+@docs hasTextDangerDark
+@docs hasTextDangerLight
 @docs hasTextDark
 @docs hasTextGrey
 @docs hasTextGreyDark
@@ -941,6 +1061,8 @@ Example usage:
 @docs hasTextGreyLight
 @docs hasTextGreyLighter
 @docs hasTextInfo
+@docs hasTextInfoDark
+@docs hasTextInfoLight
 @docs hasTextJustified
 @docs hasTextJustifiedDesktop
 @docs hasTextJustifiedDesktopOnly
@@ -963,7 +1085,11 @@ Example usage:
 @docs hasTextLeftWidescreenOnly
 @docs hasTextLight
 @docs hasTextLink
+@docs hasTextLinkDark
+@docs hasTextLinkLight
 @docs hasTextPrimary
+@docs hasTextPrimaryDark
+@docs hasTextPrimaryLight
 @docs hasTextRight
 @docs hasTextRightDesktop
 @docs hasTextRightDesktopOnly
@@ -975,7 +1101,11 @@ Example usage:
 @docs hasTextRightWidescreen
 @docs hasTextRightWidescreenOnly
 @docs hasTextSuccess
+@docs hasTextSuccessDark
+@docs hasTextSuccessLight
 @docs hasTextWarning
+@docs hasTextWarningDark
+@docs hasTextWarningLight
 @docs hasTextWeightBold
 @docs hasTextWeightLight
 @docs hasTextWeightMedium
@@ -1593,9 +1723,14 @@ Example usage:
 @docs levelItem
 @docs levelLeft
 @docs levelRight
-@docs list
-@docs listItem
 @docs loader
+@docs mb0
+@docs mb1
+@docs mb2
+@docs mb3
+@docs mb4
+@docs mb5
+@docs mb6
 @docs media
 @docs mediaContent
 @docs mediaLeft
@@ -1606,6 +1741,13 @@ Example usage:
 @docs message
 @docs messageBody
 @docs messageHeader
+@docs ml0
+@docs ml1
+@docs ml2
+@docs ml3
+@docs ml4
+@docs ml5
+@docs ml6
 @docs modal
 @docs modalBackground
 @docs modalCard
@@ -1615,6 +1757,34 @@ Example usage:
 @docs modalCardTitle
 @docs modalClose
 @docs modalContent
+@docs mr0
+@docs mr1
+@docs mr2
+@docs mr3
+@docs mr4
+@docs mr5
+@docs mr6
+@docs mt0
+@docs mt1
+@docs mt2
+@docs mt3
+@docs mt4
+@docs mt5
+@docs mt6
+@docs mx0
+@docs mx1
+@docs mx2
+@docs mx3
+@docs mx4
+@docs mx5
+@docs mx6
+@docs my0
+@docs my1
+@docs my2
+@docs my3
+@docs my4
+@docs my5
+@docs my6
 @docs navbar
 @docs navbarBrand
 @docs navbarBurger
@@ -1641,7 +1811,49 @@ Example usage:
 @docs panelIcon
 @docs panelList
 @docs panelTabs
+@docs pb0
+@docs pb1
+@docs pb2
+@docs pb3
+@docs pb4
+@docs pb5
+@docs pb6
+@docs pl0
+@docs pl1
+@docs pl2
+@docs pl3
+@docs pl4
+@docs pl5
+@docs pl6
+@docs pr0
+@docs pr1
+@docs pr2
+@docs pr3
+@docs pr4
+@docs pr5
+@docs pr6
 @docs progress
+@docs pt0
+@docs pt1
+@docs pt2
+@docs pt3
+@docs pt4
+@docs pt5
+@docs pt6
+@docs px0
+@docs px1
+@docs px2
+@docs px3
+@docs px4
+@docs px5
+@docs px6
+@docs py0
+@docs py1
+@docs py2
+@docs py3
+@docs py4
+@docs py5
+@docs py6
 @docs radio
 @docs section
 @docs select
@@ -1994,6 +2206,20 @@ hasBackgroundDanger =
     "has-background-danger"
 
 
+{-| `hasBackgroundDangerDark == "has-background-danger-dark"`
+-}
+hasBackgroundDangerDark : String
+hasBackgroundDangerDark =
+    "has-background-danger-dark"
+
+
+{-| `hasBackgroundDangerLight == "has-background-danger-light"`
+-}
+hasBackgroundDangerLight : String
+hasBackgroundDangerLight =
+    "has-background-danger-light"
+
+
 {-| `hasBackgroundDark == "has-background-dark"`
 -}
 hasBackgroundDark : String
@@ -2043,6 +2269,20 @@ hasBackgroundInfo =
     "has-background-info"
 
 
+{-| `hasBackgroundInfoDark == "has-background-info-dark"`
+-}
+hasBackgroundInfoDark : String
+hasBackgroundInfoDark =
+    "has-background-info-dark"
+
+
+{-| `hasBackgroundInfoLight == "has-background-info-light"`
+-}
+hasBackgroundInfoLight : String
+hasBackgroundInfoLight =
+    "has-background-info-light"
+
+
 {-| `hasBackgroundLight == "has-background-light"`
 -}
 hasBackgroundLight : String
@@ -2057,11 +2297,39 @@ hasBackgroundLink =
     "has-background-link"
 
 
+{-| `hasBackgroundLinkDark == "has-background-link-dark"`
+-}
+hasBackgroundLinkDark : String
+hasBackgroundLinkDark =
+    "has-background-link-dark"
+
+
+{-| `hasBackgroundLinkLight == "has-background-link-light"`
+-}
+hasBackgroundLinkLight : String
+hasBackgroundLinkLight =
+    "has-background-link-light"
+
+
 {-| `hasBackgroundPrimary == "has-background-primary"`
 -}
 hasBackgroundPrimary : String
 hasBackgroundPrimary =
     "has-background-primary"
+
+
+{-| `hasBackgroundPrimaryDark == "has-background-primary-dark"`
+-}
+hasBackgroundPrimaryDark : String
+hasBackgroundPrimaryDark =
+    "has-background-primary-dark"
+
+
+{-| `hasBackgroundPrimaryLight == "has-background-primary-light"`
+-}
+hasBackgroundPrimaryLight : String
+hasBackgroundPrimaryLight =
+    "has-background-primary-light"
 
 
 {-| `hasBackgroundSuccess == "has-background-success"`
@@ -2071,11 +2339,39 @@ hasBackgroundSuccess =
     "has-background-success"
 
 
+{-| `hasBackgroundSuccessDark == "has-background-success-dark"`
+-}
+hasBackgroundSuccessDark : String
+hasBackgroundSuccessDark =
+    "has-background-success-dark"
+
+
+{-| `hasBackgroundSuccessLight == "has-background-success-light"`
+-}
+hasBackgroundSuccessLight : String
+hasBackgroundSuccessLight =
+    "has-background-success-light"
+
+
 {-| `hasBackgroundWarning == "has-background-warning"`
 -}
 hasBackgroundWarning : String
 hasBackgroundWarning =
     "has-background-warning"
+
+
+{-| `hasBackgroundWarningDark == "has-background-warning-dark"`
+-}
+hasBackgroundWarningDark : String
+hasBackgroundWarningDark =
+    "has-background-warning-dark"
+
+
+{-| `hasBackgroundWarningLight == "has-background-warning-light"`
+-}
+hasBackgroundWarningLight : String
+hasBackgroundWarningLight =
+    "has-background-warning-light"
 
 
 {-| `hasBackgroundWhite == "has-background-white"`
@@ -2330,6 +2626,20 @@ hasTextDanger =
     "has-text-danger"
 
 
+{-| `hasTextDangerDark == "has-text-danger-dark"`
+-}
+hasTextDangerDark : String
+hasTextDangerDark =
+    "has-text-danger-dark"
+
+
+{-| `hasTextDangerLight == "has-text-danger-light"`
+-}
+hasTextDangerLight : String
+hasTextDangerLight =
+    "has-text-danger-light"
+
+
 {-| `hasTextDark == "has-text-dark"`
 -}
 hasTextDark : String
@@ -2377,6 +2687,20 @@ hasTextGreyLighter =
 hasTextInfo : String
 hasTextInfo =
     "has-text-info"
+
+
+{-| `hasTextInfoDark == "has-text-info-dark"`
+-}
+hasTextInfoDark : String
+hasTextInfoDark =
+    "has-text-info-dark"
+
+
+{-| `hasTextInfoLight == "has-text-info-light"`
+-}
+hasTextInfoLight : String
+hasTextInfoLight =
+    "has-text-info-light"
 
 
 {-| `hasTextJustified == "has-text-justified"`
@@ -2533,11 +2857,39 @@ hasTextLink =
     "has-text-link"
 
 
+{-| `hasTextLinkDark == "has-text-link-dark"`
+-}
+hasTextLinkDark : String
+hasTextLinkDark =
+    "has-text-link-dark"
+
+
+{-| `hasTextLinkLight == "has-text-link-light"`
+-}
+hasTextLinkLight : String
+hasTextLinkLight =
+    "has-text-link-light"
+
+
 {-| `hasTextPrimary == "has-text-primary"`
 -}
 hasTextPrimary : String
 hasTextPrimary =
     "has-text-primary"
+
+
+{-| `hasTextPrimaryDark == "has-text-primary-dark"`
+-}
+hasTextPrimaryDark : String
+hasTextPrimaryDark =
+    "has-text-primary-dark"
+
+
+{-| `hasTextPrimaryLight == "has-text-primary-light"`
+-}
+hasTextPrimaryLight : String
+hasTextPrimaryLight =
+    "has-text-primary-light"
 
 
 {-| `hasTextRight == "has-text-right"`
@@ -2617,11 +2969,39 @@ hasTextSuccess =
     "has-text-success"
 
 
+{-| `hasTextSuccessDark == "has-text-success-dark"`
+-}
+hasTextSuccessDark : String
+hasTextSuccessDark =
+    "has-text-success-dark"
+
+
+{-| `hasTextSuccessLight == "has-text-success-light"`
+-}
+hasTextSuccessLight : String
+hasTextSuccessLight =
+    "has-text-success-light"
+
+
 {-| `hasTextWarning == "has-text-warning"`
 -}
 hasTextWarning : String
 hasTextWarning =
     "has-text-warning"
+
+
+{-| `hasTextWarningDark == "has-text-warning-dark"`
+-}
+hasTextWarningDark : String
+hasTextWarningDark =
+    "has-text-warning-dark"
+
+
+{-| `hasTextWarningLight == "has-text-warning-light"`
+-}
+hasTextWarningLight : String
+hasTextWarningLight =
+    "has-text-warning-light"
 
 
 {-| `hasTextWeightBold == "has-text-weight-bold"`
@@ -6943,25 +7323,60 @@ levelRight =
     "level-right"
 
 
-{-| `list == "list"`
--}
-list : String
-list =
-    "list"
-
-
-{-| `listItem == "list-item"`
--}
-listItem : String
-listItem =
-    "list-item"
-
-
 {-| `loader == "loader"`
 -}
 loader : String
 loader =
     "loader"
+
+
+{-| `mb0 == "mb-0"`
+-}
+mb0 : String
+mb0 =
+    "mb-0"
+
+
+{-| `mb1 == "mb-1"`
+-}
+mb1 : String
+mb1 =
+    "mb-1"
+
+
+{-| `mb2 == "mb-2"`
+-}
+mb2 : String
+mb2 =
+    "mb-2"
+
+
+{-| `mb3 == "mb-3"`
+-}
+mb3 : String
+mb3 =
+    "mb-3"
+
+
+{-| `mb4 == "mb-4"`
+-}
+mb4 : String
+mb4 =
+    "mb-4"
+
+
+{-| `mb5 == "mb-5"`
+-}
+mb5 : String
+mb5 =
+    "mb-5"
+
+
+{-| `mb6 == "mb-6"`
+-}
+mb6 : String
+mb6 =
+    "mb-6"
 
 
 {-| `media == "media"`
@@ -7034,6 +7449,55 @@ messageHeader =
     "message-header"
 
 
+{-| `ml0 == "ml-0"`
+-}
+ml0 : String
+ml0 =
+    "ml-0"
+
+
+{-| `ml1 == "ml-1"`
+-}
+ml1 : String
+ml1 =
+    "ml-1"
+
+
+{-| `ml2 == "ml-2"`
+-}
+ml2 : String
+ml2 =
+    "ml-2"
+
+
+{-| `ml3 == "ml-3"`
+-}
+ml3 : String
+ml3 =
+    "ml-3"
+
+
+{-| `ml4 == "ml-4"`
+-}
+ml4 : String
+ml4 =
+    "ml-4"
+
+
+{-| `ml5 == "ml-5"`
+-}
+ml5 : String
+ml5 =
+    "ml-5"
+
+
+{-| `ml6 == "ml-6"`
+-}
+ml6 : String
+ml6 =
+    "ml-6"
+
+
 {-| `modal == "modal"`
 -}
 modal : String
@@ -7095,6 +7559,202 @@ modalClose =
 modalContent : String
 modalContent =
     "modal-content"
+
+
+{-| `mr0 == "mr-0"`
+-}
+mr0 : String
+mr0 =
+    "mr-0"
+
+
+{-| `mr1 == "mr-1"`
+-}
+mr1 : String
+mr1 =
+    "mr-1"
+
+
+{-| `mr2 == "mr-2"`
+-}
+mr2 : String
+mr2 =
+    "mr-2"
+
+
+{-| `mr3 == "mr-3"`
+-}
+mr3 : String
+mr3 =
+    "mr-3"
+
+
+{-| `mr4 == "mr-4"`
+-}
+mr4 : String
+mr4 =
+    "mr-4"
+
+
+{-| `mr5 == "mr-5"`
+-}
+mr5 : String
+mr5 =
+    "mr-5"
+
+
+{-| `mr6 == "mr-6"`
+-}
+mr6 : String
+mr6 =
+    "mr-6"
+
+
+{-| `mt0 == "mt-0"`
+-}
+mt0 : String
+mt0 =
+    "mt-0"
+
+
+{-| `mt1 == "mt-1"`
+-}
+mt1 : String
+mt1 =
+    "mt-1"
+
+
+{-| `mt2 == "mt-2"`
+-}
+mt2 : String
+mt2 =
+    "mt-2"
+
+
+{-| `mt3 == "mt-3"`
+-}
+mt3 : String
+mt3 =
+    "mt-3"
+
+
+{-| `mt4 == "mt-4"`
+-}
+mt4 : String
+mt4 =
+    "mt-4"
+
+
+{-| `mt5 == "mt-5"`
+-}
+mt5 : String
+mt5 =
+    "mt-5"
+
+
+{-| `mt6 == "mt-6"`
+-}
+mt6 : String
+mt6 =
+    "mt-6"
+
+
+{-| `mx0 == "mx-0"`
+-}
+mx0 : String
+mx0 =
+    "mx-0"
+
+
+{-| `mx1 == "mx-1"`
+-}
+mx1 : String
+mx1 =
+    "mx-1"
+
+
+{-| `mx2 == "mx-2"`
+-}
+mx2 : String
+mx2 =
+    "mx-2"
+
+
+{-| `mx3 == "mx-3"`
+-}
+mx3 : String
+mx3 =
+    "mx-3"
+
+
+{-| `mx4 == "mx-4"`
+-}
+mx4 : String
+mx4 =
+    "mx-4"
+
+
+{-| `mx5 == "mx-5"`
+-}
+mx5 : String
+mx5 =
+    "mx-5"
+
+
+{-| `mx6 == "mx-6"`
+-}
+mx6 : String
+mx6 =
+    "mx-6"
+
+
+{-| `my0 == "my-0"`
+-}
+my0 : String
+my0 =
+    "my-0"
+
+
+{-| `my1 == "my-1"`
+-}
+my1 : String
+my1 =
+    "my-1"
+
+
+{-| `my2 == "my-2"`
+-}
+my2 : String
+my2 =
+    "my-2"
+
+
+{-| `my3 == "my-3"`
+-}
+my3 : String
+my3 =
+    "my-3"
+
+
+{-| `my4 == "my-4"`
+-}
+my4 : String
+my4 =
+    "my-4"
+
+
+{-| `my5 == "my-5"`
+-}
+my5 : String
+my5 =
+    "my-5"
+
+
+{-| `my6 == "my-6"`
+-}
+my6 : String
+my6 =
+    "my-6"
 
 
 {-| `navbar == "navbar"`
@@ -7279,11 +7939,305 @@ panelTabs =
     "panel-tabs"
 
 
+{-| `pb0 == "pb-0"`
+-}
+pb0 : String
+pb0 =
+    "pb-0"
+
+
+{-| `pb1 == "pb-1"`
+-}
+pb1 : String
+pb1 =
+    "pb-1"
+
+
+{-| `pb2 == "pb-2"`
+-}
+pb2 : String
+pb2 =
+    "pb-2"
+
+
+{-| `pb3 == "pb-3"`
+-}
+pb3 : String
+pb3 =
+    "pb-3"
+
+
+{-| `pb4 == "pb-4"`
+-}
+pb4 : String
+pb4 =
+    "pb-4"
+
+
+{-| `pb5 == "pb-5"`
+-}
+pb5 : String
+pb5 =
+    "pb-5"
+
+
+{-| `pb6 == "pb-6"`
+-}
+pb6 : String
+pb6 =
+    "pb-6"
+
+
+{-| `pl0 == "pl-0"`
+-}
+pl0 : String
+pl0 =
+    "pl-0"
+
+
+{-| `pl1 == "pl-1"`
+-}
+pl1 : String
+pl1 =
+    "pl-1"
+
+
+{-| `pl2 == "pl-2"`
+-}
+pl2 : String
+pl2 =
+    "pl-2"
+
+
+{-| `pl3 == "pl-3"`
+-}
+pl3 : String
+pl3 =
+    "pl-3"
+
+
+{-| `pl4 == "pl-4"`
+-}
+pl4 : String
+pl4 =
+    "pl-4"
+
+
+{-| `pl5 == "pl-5"`
+-}
+pl5 : String
+pl5 =
+    "pl-5"
+
+
+{-| `pl6 == "pl-6"`
+-}
+pl6 : String
+pl6 =
+    "pl-6"
+
+
+{-| `pr0 == "pr-0"`
+-}
+pr0 : String
+pr0 =
+    "pr-0"
+
+
+{-| `pr1 == "pr-1"`
+-}
+pr1 : String
+pr1 =
+    "pr-1"
+
+
+{-| `pr2 == "pr-2"`
+-}
+pr2 : String
+pr2 =
+    "pr-2"
+
+
+{-| `pr3 == "pr-3"`
+-}
+pr3 : String
+pr3 =
+    "pr-3"
+
+
+{-| `pr4 == "pr-4"`
+-}
+pr4 : String
+pr4 =
+    "pr-4"
+
+
+{-| `pr5 == "pr-5"`
+-}
+pr5 : String
+pr5 =
+    "pr-5"
+
+
+{-| `pr6 == "pr-6"`
+-}
+pr6 : String
+pr6 =
+    "pr-6"
+
+
 {-| `progress == "progress"`
 -}
 progress : String
 progress =
     "progress"
+
+
+{-| `pt0 == "pt-0"`
+-}
+pt0 : String
+pt0 =
+    "pt-0"
+
+
+{-| `pt1 == "pt-1"`
+-}
+pt1 : String
+pt1 =
+    "pt-1"
+
+
+{-| `pt2 == "pt-2"`
+-}
+pt2 : String
+pt2 =
+    "pt-2"
+
+
+{-| `pt3 == "pt-3"`
+-}
+pt3 : String
+pt3 =
+    "pt-3"
+
+
+{-| `pt4 == "pt-4"`
+-}
+pt4 : String
+pt4 =
+    "pt-4"
+
+
+{-| `pt5 == "pt-5"`
+-}
+pt5 : String
+pt5 =
+    "pt-5"
+
+
+{-| `pt6 == "pt-6"`
+-}
+pt6 : String
+pt6 =
+    "pt-6"
+
+
+{-| `px0 == "px-0"`
+-}
+px0 : String
+px0 =
+    "px-0"
+
+
+{-| `px1 == "px-1"`
+-}
+px1 : String
+px1 =
+    "px-1"
+
+
+{-| `px2 == "px-2"`
+-}
+px2 : String
+px2 =
+    "px-2"
+
+
+{-| `px3 == "px-3"`
+-}
+px3 : String
+px3 =
+    "px-3"
+
+
+{-| `px4 == "px-4"`
+-}
+px4 : String
+px4 =
+    "px-4"
+
+
+{-| `px5 == "px-5"`
+-}
+px5 : String
+px5 =
+    "px-5"
+
+
+{-| `px6 == "px-6"`
+-}
+px6 : String
+px6 =
+    "px-6"
+
+
+{-| `py0 == "py-0"`
+-}
+py0 : String
+py0 =
+    "py-0"
+
+
+{-| `py1 == "py-1"`
+-}
+py1 : String
+py1 =
+    "py-1"
+
+
+{-| `py2 == "py-2"`
+-}
+py2 : String
+py2 =
+    "py-2"
+
+
+{-| `py3 == "py-3"`
+-}
+py3 : String
+py3 =
+    "py-3"
+
+
+{-| `py4 == "py-4"`
+-}
+py4 : String
+py4 =
+    "py-4"
+
+
+{-| `py5 == "py-5"`
+-}
+py5 : String
+py5 =
+    "py-5"
+
+
+{-| `py6 == "py-6"`
+-}
+py6 : String
+py6 =
+    "py-6"
 
 
 {-| `radio == "radio"`
